@@ -1,0 +1,98 @@
+<nav
+  class="fixed w-full z-50 transition-all duration-300"
+  [ngClass]="{
+    'bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3': isScrolled,
+    'bg-transparent py-6': !isScrolled
+  }"
+>
+  <!-- Subtle top gradient when not scrolled for better text readability -->
+  <div *ngIf="!isScrolled" class="absolute inset-0 bg-gradient-to-b from-navy/80 to-transparent -z-10"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center gap-2 group">
+        <lucide-icon [img]="ScaleIcon" class="h-9 w-9 text-gold group-hover:text-white transition-colors"></lucide-icon>
+        <span class="font-serif text-3xl font-bold text-white tracking-wide">
+          Lex<span class="text-gold">Prime</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a
+          *ngFor="let link of navLinks"
+          [routerLink]="link.href"
+          class="text-gray-200 hover:text-gold transition-colors font-medium text-base uppercase tracking-wider"
+        >
+          {{ link.name }}
+        </a>
+
+        <!-- Dark Mode Toggle -->
+        <button
+          *ngIf="mounted"
+          (click)="toggleTheme()"
+          class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-gold hover:text-gold transition-all"
+          aria-label="Toggle dark mode"
+        >
+          <lucide-icon *ngIf="theme === 'dark'" [img]="SunIcon" class="w-4 h-4"></lucide-icon>
+          <lucide-icon *ngIf="theme !== 'dark'" [img]="MoonIcon" class="w-4 h-4"></lucide-icon>
+        </button>
+
+        <a
+          routerLink="/book-consultation"
+          class="glow-effect bg-gold hover:bg-gold-light text-navy px-8 py-3 rounded font-bold text-lg transition-all transform hover:scale-105"
+        >
+          Consult Now
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center gap-3">
+        <!-- Dark Mode Toggle Mobile -->
+        <button
+          *ngIf="mounted"
+          (click)="toggleTheme()"
+          class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-gold hover:text-gold transition-all"
+          aria-label="Toggle dark mode"
+        >
+          <lucide-icon *ngIf="theme === 'dark'" [img]="SunIcon" class="w-4 h-4"></lucide-icon>
+          <lucide-icon *ngIf="theme !== 'dark'" [img]="MoonIcon" class="w-4 h-4"></lucide-icon>
+        </button>
+        <button
+          (click)="toggleMobileMenu()"
+          class="text-white hover:text-gold"
+        >
+          <lucide-icon *ngIf="mobileMenuOpen" [img]="XIcon" class="h-6 w-6"></lucide-icon>
+          <lucide-icon *ngIf="!mobileMenuOpen" [img]="MenuIcon" class="h-6 w-6"></lucide-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div
+    *ngIf="mobileMenuOpen"
+    class="md:hidden bg-navy border-t border-gray-700 overflow-hidden transition-all duration-300"
+  >
+    <div class="px-4 pt-2 pb-6 space-y-2">
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.href"
+        (click)="closeMobileMenu()"
+        class="block px-3 py-2 text-lg font-medium text-white hover:text-gold hover:bg-white/5 rounded-md transition-colors"
+      >
+        {{ link.name }}
+      </a>
+      <div class="pt-4">
+        <a
+          routerLink="/book-consultation"
+          (click)="closeMobileMenu()"
+          class="block w-full text-center bg-gold text-navy px-6 py-4 rounded font-bold text-lg"
+        >
+          Book Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

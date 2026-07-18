@@ -1,0 +1,97 @@
+<footer class="bg-[#07172f] text-gray-300 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="space-y-6">
+        <a routerLink="/" class="flex items-center gap-2 group inline-block">
+          <lucide-icon [img]="ScaleIcon" class="h-8 w-8 text-gold"></lucide-icon>
+          <span class="font-serif text-2xl font-bold text-white tracking-wide">
+            Lex<span class="text-gold">Prime</span>
+          </span>
+        </a>
+        <p class="text-sm leading-relaxed text-gray-400">
+          A premium law firm dedicated to providing exceptional legal services with integrity, professionalism, and respect for our clients.
+        </p>
+        <div class="flex space-x-4">
+          <!-- Social placeholders -->
+          <a
+            *ngFor="let social of socials"
+            href="#"
+            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
+          >
+            <span class="sr-only">{{ social }}</span>
+            <div class="w-4 h-4 bg-current rounded-sm"></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white font-serif font-bold text-lg mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li *ngFor="let link of quickLinks">
+            <a
+              [routerLink]="link.href"
+              class="flex items-center gap-2 hover:text-gold transition-colors group text-sm"
+            >
+              <lucide-icon [img]="ArrowRightIcon" class="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors"></lucide-icon>
+              {{ link.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Practice Areas -->
+      <div>
+        <h3 class="text-white font-serif font-bold text-lg mb-6">Practice Areas</h3>
+        <ul class="space-y-3">
+          <li *ngFor="let area of practiceAreas">
+            <a
+              routerLink="/practice-areas"
+              class="flex items-center gap-2 hover:text-gold transition-colors group text-sm"
+            >
+              <lucide-icon [img]="ArrowRightIcon" class="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors"></lucide-icon>
+              {{ area }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-white font-serif font-bold text-lg mb-6">Contact Us</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <lucide-icon [img]="MapPinIcon" class="w-5 h-5 text-gold shrink-0 mt-0.5"></lucide-icon>
+            <span>123 Legal Avenue, Suite 400<br />New Delhi, ND 110001</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <lucide-icon [img]="PhoneIcon" class="w-5 h-5 text-gold shrink-0"></lucide-icon>
+            <a href="tel:+919876543210" class="hover:text-white transition-colors">
+              +91 98765 43210
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <lucide-icon [img]="MailIcon" class="w-5 h-5 text-gold shrink-0"></lucide-icon>
+            <a href="mailto:contact@lexprime.com" class="hover:text-white transition-colors">
+              contact&#64;lexprime.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800 bg-[#051021]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">
+        © {{ currentYear }} LexPrime Law Firm. All rights reserved.
+      </p>
+      <div class="flex space-x-6 text-sm text-gray-500">
+        <a routerLink="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a routerLink="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

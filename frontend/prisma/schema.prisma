@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("ADMIN") // Can be ADMIN or SUPER_ADMIN
+  createdAt DateTime @default(now())
+}
+
+model Lawyer {
+  id              String   @id @default(cuid())
+  name            String
+  designation     String
+  experience      Int      // In years
+  education       String
+  specialization  String
+  barRegistration String
+  languages       String   // comma separated for sqlite
+  photoUrl        String?
+  createdAt       DateTime @default(now())
+}
+
+model PracticeArea {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  iconUrl     String?
+  createdAt   DateTime @default(now())
+}
+
+model Appointment {
+  id            String   @id @default(cuid())
+  clientName    String
+  phone         String
+  email         String
+  caseType      String
+  preferredDate DateTime
+  preferredTime String
+  message       String?
+  status        String   @default("PENDING") // PENDING, APPROVED, REJECTED, RESCHEDULED
+  createdAt     DateTime @default(now())
+}
+
+model Blog {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  content   String
+  authorId  String
+  imageUrl  String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model ContactEnquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  subject   String
+  message   String
+  status    String   @default("UNREAD")
+  createdAt DateTime @default(now())
+}
