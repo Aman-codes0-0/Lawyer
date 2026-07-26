@@ -4,9 +4,9 @@ A modern, full-stack law firm website built with **Next.js 16**, **Prisma ORM**,
 
 ---
 
-## 🚀 Live Features
+##  Live Features
 
-### 🌐 Public Pages
+###  Public Pages
 | Route | Description |
 |-------|-------------|
 | `/` | Hero section, stats, lawyer search, why-choose-us & CTA |
@@ -18,7 +18,7 @@ A modern, full-stack law firm website built with **Next.js 16**, **Prisma ORM**,
 | `/blog` | Published blog articles |
 | `/faq` | Frequently asked questions |
 
-### 🔐 Admin Dashboard (`/admin`)
+###  Admin Dashboard (`/admin`)
 | Route | Description |
 |-------|-------------|
 | `/admin/login` | Secure admin login (NextAuth) |
@@ -29,7 +29,7 @@ A modern, full-stack law firm website built with **Next.js 16**, **Prisma ORM**,
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -44,7 +44,7 @@ A modern, full-stack law firm website built with **Next.js 16**, **Prisma ORM**,
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 lawyer/
@@ -70,7 +70,7 @@ lawyer/
 
 ---
 
-## 🗃️ Database Models
+##  Database Models
 
 The app uses **SQLite** with Prisma ORM and includes the following models:
 
@@ -83,7 +83,7 @@ The app uses **SQLite** with Prisma ORM and includes the following models:
 
 ---
 
-## ⚙️ Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 Create a `.env` file inside the `frontend/` directory:
 
@@ -131,7 +131,7 @@ NEXTAUTH_URL="http://localhost:3000"
 
 ---
 
-## 📜 Available Scripts
+##  Available Scripts
 
 Run these from inside the `frontend/` directory:
 
@@ -144,13 +144,13 @@ npm run lint     # Run ESLint
 
 ---
 
-## 🌍 Multi-Language Support
+##  Multi-Language Support
 
 The site includes a built-in language context (`LanguageContext`) allowing easy addition of new locales. All UI strings are managed via translation keys accessed through the `useLanguage()` hook.
 
 ---
 
-## 🎨 Design Highlights
+##  Design Highlights
 
 - **Dark / Light mode** support via `next-themes`
 - **Glassmorphism** UI elements and premium card styles
@@ -161,7 +161,7 @@ The site includes a built-in language context (`LanguageContext`) allowing easy 
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create your feature branch: `git checkout -b feature/your-feature`
@@ -171,6 +171,6 @@ The site includes a built-in language context (`LanguageContext`) allowing easy 
 
 ---
 
-## 📄 License
+##  License
 
 This project is private. All rights reserved © 2026 LawFirm.
