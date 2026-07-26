@@ -3,10 +3,14 @@ import { Users, Calendar, MessageSquare, Briefcase } from "lucide-react";
 import Link from "next/link";
 
 export default async function AdminDashboard() {
-  const [appointmentsCount, enquiriesCount, recentAppointments] = await Promise.all([
+  const [appointmentsCount, enquiriesCount, recentAppointments, recentEnquiries] = await Promise.all([
     prisma.appointment.count(),
     prisma.contactEnquiry.count(),
     prisma.appointment.findMany({
+      take: 5,
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.contactEnquiry.findMany({
       take: 5,
       orderBy: { createdAt: "desc" },
     }),
@@ -76,7 +80,25 @@ export default async function AdminDashboard() {
             <h3 className="text-lg font-bold text-navy">Recent Enquiries</h3>
             <Link href="/admin/dashboard/enquiries" className="text-sm text-gold hover:underline">View All</Link>
           </div>
-          <div className="text-center text-gray-500 py-8">No recent enquiries found.</div>
+          {recentEnquiries.length === 0 ? (
+            <div className="text-center text-gray-500 py-8">No recent enquiries found.</div>
+          ) : (
+            <div className="space-y-4">
+              {recentEnquiries.map((enq) => (
+                <div key={enq.id} className="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
+                  <div>
+                    <p className="font-bold text-navy">{enq.name}</p>
+                    <p className="text-xs text-gray-500">{enq.subject} • {new Date(enq.createdAt).toLocaleDateString()}</p>
+                  </div>
+                  <span className={`px-2 py-1 text-xs font-bold rounded-full ${
+                    enq.status === "UNREAD" ? "bg-red-100 text-red-800" : "bg-gray-100 text-gray-800"
+                  }`}>
+                    {enq.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

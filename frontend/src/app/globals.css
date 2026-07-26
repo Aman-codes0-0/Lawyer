@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
 }
 
@@ -171,20 +172,6 @@ h1, h2, h3, h4, h5, h6 {
 .dark .border-gray-100,
 .dark .border-gray-200 {
   border-color: rgba(255,255,255,0.08) !important;
-}
-
-/* ───────────────────────────────────────────
-   Noise Texture Overlay (premium feel)
-─────────────────────────────────────────── */
-.bg-navy::after,
-.dark .bg-gray-50::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  border-radius: inherit;
-  opacity: 0.5;
 }
 
 /* ───────────────────────────────────────────

@@ -5,12 +5,14 @@ import Link from "next/link";
 import { Menu, X, Scale, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -22,12 +24,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Practice Areas", href: "/practice-areas" },
-    { name: "Our Team", href: "/team" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { nameKey: "nav_home" as const, href: "/" },
+    { nameKey: "nav_about" as const, href: "/about" },
+    { nameKey: "nav_team" as const, href: "/team" },
+    { nameKey: "nav_blog" as const, href: "/blog" },
+    { nameKey: "nav_contact" as const, href: "/contact" },
   ];
 
   return (
@@ -54,13 +55,27 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.nameKey}
                 href={link.href}
                 className="text-gray-200 hover:text-gold transition-colors font-medium text-base uppercase tracking-wider"
               >
-                {link.name}
+                {t(link.nameKey)}
               </Link>
             ))}
+
+            {/* Language Toggle */}
+            {mounted && (
+              <button
+                onClick={() => setLang(lang === "en" ? "hi" : "en")}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/20 text-white hover:border-gold hover:text-gold transition-all text-sm font-bold"
+                aria-label="Toggle language"
+                id="lang-toggle-desktop"
+              >
+                <span className={lang === "en" ? "text-gold" : "text-white/60"}>EN</span>
+                <span className="text-white/30 mx-0.5">|</span>
+                <span className={lang === "hi" ? "text-gold" : "text-white/60"}>हि</span>
+              </button>
+            )}
 
             {/* Dark Mode Toggle */}
             {mounted && (
@@ -99,12 +114,25 @@ export default function Navbar() {
               href="/book-consultation"
               className="glow-effect bg-gold hover:bg-gold-light text-navy px-8 py-3 rounded font-bold text-lg transition-all transform hover:scale-105"
             >
-              Consult Now
+              {t("nav_consult")}
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-3">
+            {/* Language Toggle Mobile */}
+            {mounted && (
+              <button
+                onClick={() => setLang(lang === "en" ? "hi" : "en")}
+                className="flex items-center gap-1 px-2 py-1 rounded-full border border-white/20 text-white text-xs font-bold"
+                aria-label="Toggle language"
+                id="lang-toggle-mobile"
+              >
+                <span className={lang === "en" ? "text-gold" : "text-white/60"}>EN</span>
+                <span className="text-white/30">|</span>
+                <span className={lang === "hi" ? "text-gold" : "text-white/60"}>हि</span>
+              </button>
+            )}
             {/* Dark Mode Toggle Mobile */}
             {mounted && (
               <button
@@ -141,12 +169,12 @@ export default function Navbar() {
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.nameKey}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-lg font-medium text-white hover:text-gold hover:bg-white/5 rounded-md transition-colors"
                 >
-                  {link.name}
+                  {t(link.nameKey)}
                 </Link>
               ))}
               <div className="pt-4">
@@ -155,7 +183,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block w-full text-center bg-gold text-navy px-6 py-4 rounded font-bold text-lg"
                 >
-                  Book Consultation
+                  {t("nav_book")}
                 </Link>
               </div>
             </div>

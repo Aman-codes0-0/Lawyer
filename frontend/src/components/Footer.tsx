@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Scale, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#07172f] text-gray-300 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -15,10 +20,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              A premium law firm dedicated to providing exceptional legal services with integrity, professionalism, and respect for our clients.
+              {t("footer_tagline")}
             </p>
             <div className="flex space-x-4">
-              {/* Social placeholders */}
               {["Twitter", "LinkedIn", "Facebook"].map((social) => (
                 <a
                   key={social}
@@ -34,42 +38,41 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6">Quick Links</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6">{t("footer_quick_links")}</h3>
             <ul className="space-y-3">
               {[
-                { name: "About Us", href: "/about" },
-                { name: "Our Team", href: "/team" },
-                { name: "Practice Areas", href: "/practice-areas" },
-                { name: "Blog & News", href: "/blog" },
-                { name: "Contact Us", href: "/contact" },
+                { nameKey: "nav_about" as const, href: "/about" },
+                { nameKey: "nav_team" as const, href: "/team" },
+                { nameKey: "nav_blog" as const, href: "/blog" },
+                { nameKey: "nav_contact" as const, href: "/contact" },
               ].map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <Link
                     href={link.href}
                     className="flex items-center gap-2 hover:text-gold transition-colors group text-sm"
                   >
                     <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
-                    {link.name}
+                    {t(link.nameKey)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Practice Areas */}
+          {/* Our Expertise */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6">Practice Areas</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6">{t("footer_expertise")}</h3>
             <ul className="space-y-3">
               {[
-                "Corporate Law",
+                "Criminal Law",
                 "Family Law",
-                "Criminal Defense",
-                "Property Disputes",
-                "Intellectual Property",
+                "Property Law",
+                "Corporate Law",
+                "Civil Litigation",
               ].map((area) => (
                 <li key={area}>
                   <Link
-                    href="/practice-areas"
+                    href="/team"
                     className="flex items-center gap-2 hover:text-gold transition-colors group text-sm"
                   >
                     <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
@@ -82,7 +85,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6">Contact Us</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6">{t("footer_contact")}</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -109,11 +112,11 @@ export default function Footer() {
       <div className="border-t border-gray-800 bg-[#051021]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} LexPrime Law Firm. All rights reserved.
+            © {new Date().getFullYear()} {t("footer_copyright")}
           </p>
           <div className="flex space-x-6 text-sm text-gray-500">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">{t("footer_privacy")}</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">{t("footer_terms")}</Link>
           </div>
         </div>
       </div>
