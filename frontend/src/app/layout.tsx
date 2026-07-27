@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Geist } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,8 @@ export const viewport = {
   themeColor: '#050505',
 };
 
+import { SplashScreen } from "@/components/SplashScreen";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +44,18 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
+          <SplashScreen />
+          <NextTopLoader
+            color="#D4AF37" // Luxury gold
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #D4AF37,0 0 5px #D4AF37"
+          />
           {children}
         </Providers>
       </body>
