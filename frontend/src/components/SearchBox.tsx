@@ -176,7 +176,7 @@ export default function SearchBox({
           {/* Search Button */}
           <button
             onClick={handleSearch}
-            className="flex items-center justify-center gap-2 bg-gold hover:bg-amber-400 text-navy font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-gold/30 group whitespace-nowrap min-w-[160px]"
+            className="flex items-center justify-center gap-2 bg-gold hover:bg-amber-400 text-navy font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-gold/30 group whitespace-nowrap w-full lg:w-auto min-w-[160px]"
           >
             <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
             {t("search_button")}

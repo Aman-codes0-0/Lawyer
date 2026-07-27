@@ -71,7 +71,7 @@ export default function AdminAppointments() {
       </div>
 
       {/* Status Summary */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { label: "Pending", status: "PENDING", color: "yellow", count: appointments.filter((a) => a.status === "PENDING").length },
           { label: "Approved", status: "APPROVED", color: "green", count: appointments.filter((a) => a.status === "APPROVED").length },

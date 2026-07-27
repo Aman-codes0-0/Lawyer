@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, Geist } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,17 +14,19 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+
 export const metadata: Metadata = {
   title: "Law Firm | Premium Legal Services",
   description: "Modern & Premium Law Firm Website",
 };
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#050505',
+};
 
 export default function RootLayout({
   children,
@@ -38,13 +41,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </Providers>
       </body>
     </html>
   );
 }
+

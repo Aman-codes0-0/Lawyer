@@ -39,13 +39,13 @@ const posts = [
 
 export default function Blog() {
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-white">
+    <div className="min-h-[100dvh] pt-28 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Search */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
               Legal Insights & News
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
@@ -68,7 +68,7 @@ export default function Blog() {
             <div className="lg:w-1/2 relative h-64 lg:h-auto overflow-hidden">
               <Image src={posts[0].img} alt={posts[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+            <div className="lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
               <span className="inline-block px-3 py-1 bg-gold/10 text-gold font-bold text-xs uppercase tracking-wider rounded-full mb-6 w-fit">
                 {posts[0].category}
               </span>

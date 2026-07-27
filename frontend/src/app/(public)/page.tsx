@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100dvh] lg:min-h-0 lg:h-[95vh] flex items-center justify-center overflow-hidden py-32 lg:py-0">
         <div className="absolute inset-0 bg-navy/85 z-10" />
         <motion.div
           initial={{ scale: 1.1 }}
@@ -45,19 +45,19 @@ export default function Home() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 space-y-8 text-center lg:text-left"
+            className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-tight text-white drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-tight text-white drop-shadow-lg">
               {t("hero_heading").split(" ").slice(0, -1).join(" ")}{" "}
               <span className="text-gold">{t("hero_heading").split(" ").at(-1)}</span>
             </h1>
             <p className="text-2xl text-gray-200 font-serif italic border-l-4 border-gold pl-6 ml-auto mr-auto lg:ml-0 lg:mr-0 inline-block">
               {t("hero_tagline")}
             </p>
-            <p className="text-xl max-w-2xl text-gray-100 font-medium leading-relaxed mx-auto lg:mx-0 drop-shadow-md">
+            <p className="text-lg sm:text-xl max-w-2xl text-gray-100 font-medium leading-relaxed mx-auto lg:mx-0 drop-shadow-md">
               {t("hero_subtext")}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-4">
               <Link
                 href="/book-consultation"
                 className="glow-effect bg-gold hover:bg-gold-light text-navy px-8 py-4 rounded font-bold transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-gold/20 text-lg w-full sm:w-auto text-center"
@@ -111,9 +111,9 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="glass-light dark:bg-[#0A0A0A] py-16 -mt-16 relative z-30 mx-4 lg:mx-auto max-w-6xl rounded-2xl shadow-2xl border border-gray-100 dark:border-white/10 backdrop-blur-xl"
+        className="glass-light dark:bg-[#0A0A0A] py-10 sm:py-16 -mt-10 sm:-mt-16 relative z-30 mx-4 lg:mx-auto max-w-6xl rounded-2xl shadow-2xl border border-gray-100 dark:border-white/10 backdrop-blur-xl"
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 px-4 sm:px-8">
           {[
             { icon: Award, stat: "20+", labelKey: "stat_experience" as const },
             { icon: Briefcase, stat: "5000+", labelKey: "stat_cases" as const },
@@ -161,10 +161,10 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-32 bg-white">
+      <section className="py-20 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeInUp} className="relative h-[700px] rounded-2xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] group">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+            <motion.div {...fadeInUp} className="relative h-[400px] sm:h-[700px] rounded-2xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] group">
               <Image
                 src="https://images.unsplash.com/photo-1555374018-13a8994ab241?q=80&w=1000&auto=format&fit=crop"
                 alt="Law Firm Team"
@@ -209,11 +209,11 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center bg-fixed" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent" />
 
-        <motion.div {...fadeInUp} className="relative z-10 max-w-4xl mx-auto text-center px-4 space-y-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white drop-shadow-md">
+        <motion.div {...fadeInUp} className="relative z-10 max-w-4xl mx-auto text-center px-4 space-y-6 sm:space-y-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white drop-shadow-md">
             {t("cta_heading")}
           </h2>
-          <p className="text-2xl text-gold font-serif italic">
+          <p className="text-xl sm:text-2xl text-gold font-serif italic">
             {t("cta_sub")}
           </p>
           <div className="pt-8 flex justify-center">

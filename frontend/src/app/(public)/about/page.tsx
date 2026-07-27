@@ -3,12 +3,12 @@ import { Award, Target, Scale, History } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-white">
+    <div className="min-h-[100dvh] pt-28 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
             About Our Firm
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -18,7 +18,7 @@ export default function About() {
 
         {/* Story Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[400px] sm:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
             <Image 
               src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?q=80&w=1000&auto=format&fit=crop"
               alt="Law Firm Office"
@@ -44,14 +44,14 @@ export default function About() {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <div className="bg-navy p-12 rounded-2xl text-white">
+          <div className="bg-navy p-8 sm:p-12 rounded-2xl text-white">
             <Target className="w-12 h-12 text-gold mb-6" />
             <h3 className="text-3xl font-serif font-bold mb-4">Our Mission</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
               To deliver strategic, effective, and ethical legal solutions that protect our clients' interests and secure their futures. We strive to navigate the complexities of the law so our clients can navigate their lives with peace of mind.
             </p>
           </div>
-          <div className="bg-gray-50 border border-gray-100 p-12 rounded-2xl text-navy">
+          <div className="bg-gray-50 border border-gray-100 p-8 sm:p-12 rounded-2xl text-navy">
             <Scale className="w-12 h-12 text-gold mb-6" />
             <h3 className="text-3xl font-serif font-bold mb-4">Our Vision</h3>
             <p className="text-gray-600 text-lg leading-relaxed">

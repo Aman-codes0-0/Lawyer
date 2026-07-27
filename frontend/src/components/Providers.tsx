@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProfileProvider } from "@/context/UserProfileContext";
+import { LawyerAuthProvider } from "@/context/LawyerAuthContext";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -17,9 +18,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
       >
         <LanguageProvider>
           <UserProfileProvider>
-            <SmoothScrollProvider>
-              {children}
-            </SmoothScrollProvider>
+            <LawyerAuthProvider>
+              <SmoothScrollProvider>
+                {children}
+              </SmoothScrollProvider>
+            </LawyerAuthProvider>
           </UserProfileProvider>
         </LanguageProvider>
       </ThemeProvider>

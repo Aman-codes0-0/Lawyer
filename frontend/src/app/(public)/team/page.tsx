@@ -28,12 +28,12 @@ export default function Team() {
   }, [filters]);
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-gray-50">
+    <div className="min-h-[100dvh] pt-28 pb-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
             {t("team_heading")}
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">

@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
             <Link href="/" className="flex items-center gap-2 group inline-block">
               <Scale className="h-8 w-8 text-gold" />
               <span className="font-serif text-2xl font-bold text-white tracking-wide">
@@ -27,10 +27,10 @@ export default function Footer() {
                 <a
                   key={social}
                   href="#"
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
+                  className="w-12 h-12 sm:w-10 sm:h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
                 >
                   <span className="sr-only">{social}</span>
-                  <div className="w-4 h-4 bg-current rounded-sm" />
+                  <div className="w-5 h-5 sm:w-4 sm:h-4 bg-current rounded-sm" />
                 </a>
               ))}
             </div>

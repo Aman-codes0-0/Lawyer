@@ -41,12 +41,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-gray-50">
+    <div className="min-h-[100dvh] pt-28 pb-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-navy mb-6">
             {t("contact_heading")}
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -58,7 +58,7 @@ export default function Contact() {
 
           {/* Contact Info (Left Sidebar) */}
           <div className="space-y-8">
-            <div className="bg-navy rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
+            <div className="bg-navy rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-2xl" />
               <h3 className="text-2xl font-serif font-bold mb-8 relative z-10">{t("contact_info_title")}</h3>
 
@@ -97,7 +97,7 @@ export default function Contact() {
 
           {/* Simple Query Form (Main Content) */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 h-full">
+            <div className="bg-white rounded-2xl p-5 sm:p-8 lg:p-12 shadow-sm border border-gray-100 h-full">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
                   <CheckCircle2 className="w-20 h-20 text-green-500" />

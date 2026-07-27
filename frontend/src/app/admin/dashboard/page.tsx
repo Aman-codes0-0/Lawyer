@@ -32,7 +32,7 @@ export default async function AdminDashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {stats.map((stat) => (
           <div key={stat.name} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
             <div>
@@ -58,7 +58,7 @@ export default async function AdminDashboard() {
           ) : (
             <div className="space-y-4">
               {recentAppointments.map((apt) => (
-                <div key={apt.id} className="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
+                <div key={apt.id} className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-0 p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
                   <div>
                     <p className="font-bold text-navy">{apt.clientName}</p>
                     <p className="text-xs text-gray-500">{apt.caseType} • {new Date(apt.createdAt).toLocaleDateString()}</p>
@@ -85,7 +85,7 @@ export default async function AdminDashboard() {
           ) : (
             <div className="space-y-4">
               {recentEnquiries.map((enq) => (
-                <div key={enq.id} className="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
+                <div key={enq.id} className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-0 p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
                   <div>
                     <p className="font-bold text-navy">{enq.name}</p>
                     <p className="text-xs text-gray-500">{enq.subject} • {new Date(enq.createdAt).toLocaleDateString()}</p>

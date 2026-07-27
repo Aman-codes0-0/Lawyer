@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -22,9 +23,12 @@ model Lawyer {
   experience      Int      // In years
   education       String
   specialization  String
-  barRegistration String
+  barRegistration String   @unique
   languages       String   // comma separated for sqlite
   photoUrl        String?
+  email           String?  @unique
+  password        String?
+  isVerified      Boolean  @default(false)
   createdAt       DateTime @default(now())
 }
 
