@@ -44,15 +44,6 @@ export function SplashScreen() {
               <Scale className="w-10 h-10 text-[#D4AF37]" strokeWidth={1.5} />
             </motion.div>
           </div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 text-[#D4AF37] font-playfair tracking-widest text-2xl font-semibold drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]"
-          >
-            LEXPRIME
-          </motion.h2>
         </motion.div>
       )}
     </AnimatePresence>
