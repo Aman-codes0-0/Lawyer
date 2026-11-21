@@ -1,0 +1,23 @@
+{
+  "name": "lexprime-hono-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch home.js",
+    "start": "node home.js",
+    "dev:worker": "npm run db:migrate:local && wrangler dev --local --port 5000",
+    "db:migrate:local": "wrangler d1 migrations apply lexprime-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply lexprime-db --remote",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.4",
+    "bcryptjs": "^3.0.2",
+    "hono": "^4.8.3",
+    "jose": "^6.0.11"
+  },
+  "devDependencies": {
+    "wrangler": "^4.166.0"
+  }
+}
