@@ -1,4 +1,4 @@
-# ⚖️ LawFirm (LexPrime) — Decoupled Legal Services Platform
+# ⚖️ LawFirm (LexPrime can be renamed) — Decoupled Legal Services Platform
 
 A modern, full-stack law firm web platform built with a **React (Vite)** frontend and a **Hono** API. The primary local backend runs as a Cloudflare Worker using Wrangler's local D1 SQLite emulation, keeping it compatible with Cloudflare D1.
 
