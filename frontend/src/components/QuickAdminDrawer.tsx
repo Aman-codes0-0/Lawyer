@@ -26,6 +26,7 @@ export default function QuickAdminDrawer() {
   const handlePinSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (pin === "1234" || pin === "admin123") {
+      localStorage.setItem("lexprime_admin_session", JSON.stringify({ email: "admin@lexprime.com" }));
       setIsUnlocked(true);
       setPinError("");
       setPin("");
