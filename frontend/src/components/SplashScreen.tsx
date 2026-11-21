@@ -27,7 +27,7 @@ export function SplashScreen() {
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="w-28 h-28 border-t-[3px] border-r-[3px] border-[#DDA73A] border-b-[3px] border-b-[#214AAB] rounded-full absolute"
+              className="w-28 h-28 border-t-[3px] border-r-[3px] border-[#214AAB] border-b-[3px] border-b-[#214AAB] rounded-full absolute"
             />
             
             <motion.div

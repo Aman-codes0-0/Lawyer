@@ -8,7 +8,7 @@ export default function Footer() {
   const { settings } = useSiteSettings();
 
   return (
-    <footer className="bg-[#162F6A] text-gray-200 border-t border-[#DDA73A]/30">
+    <footer className="bg-[#162F6A] text-gray-200 border-t border-[#214AAB]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -58,7 +58,7 @@ export default function Footer() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="w-10 h-10 rounded-md bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-[#DDA73A] hover:border-[#DDA73A] hover:text-[#162F6A] transition-all cursor-pointer shadow-sm"
+                    className="w-10 h-10 rounded-md bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-[#214AAB] hover:border-[#214AAB] hover:text-[#162F6A] transition-all cursor-pointer shadow-sm"
                     aria-label={item.name}
                   >
                     {item.icon}
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#DDA73A] pb-1 inline-block">{t("footer_quick_links")}</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#A3BBF3] pb-1 inline-block">{t("footer_quick_links")}</h3>
             <ul className="space-y-3">
               {[
                 { nameKey: "nav_about" as const, href: "/about" },
@@ -81,9 +81,9 @@ export default function Footer() {
                 <li key={link.nameKey}>
                   <Link
                     to={link.href}
-                    className="flex items-center gap-2 text-gray-300 hover:text-[#DDA73A] transition-colors group text-sm"
+                    className="flex items-center gap-2 text-gray-300 hover:text-[#A3BBF3] transition-colors group text-sm"
                   >
-                    <ArrowRight className="w-4 h-4 text-[#DDA73A] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#A3BBF3] group-hover:translate-x-1 transition-transform" />
                     {t(link.nameKey)}
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Our Expertise */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#DDA73A] pb-1 inline-block">{t("footer_expertise")}</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#A3BBF3] pb-1 inline-block">{t("footer_expertise")}</h3>
             <ul className="space-y-3">
               {[
                 "Corporate Law",
@@ -105,9 +105,9 @@ export default function Footer() {
                 <li key={area}>
                   <Link
                     to="/team"
-                    className="flex items-center gap-2 text-gray-300 hover:text-[#DDA73A] transition-colors group text-sm"
+                    className="flex items-center gap-2 text-gray-300 hover:text-[#A3BBF3] transition-colors group text-sm"
                   >
-                    <ArrowRight className="w-4 h-4 text-[#DDA73A] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#A3BBF3] group-hover:translate-x-1 transition-transform" />
                     {area}
                   </Link>
                 </li>
@@ -117,21 +117,21 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#DDA73A] pb-1 inline-block">{t("footer_contact")}</h3>
+            <h3 className="text-white font-serif font-bold text-lg mb-6 border-b-2 border-[#A3BBF3] pb-1 inline-block">{t("footer_contact")}</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#DDA73A] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#A3BBF3] shrink-0 mt-0.5" />
                 <span className="text-gray-300">123 Legal Avenue, Shastri Bhawan Annex<br />New Delhi, ND 110001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#DDA73A] shrink-0" />
-                <a href="tel:+919876543210" className="text-gray-300 hover:text-[#DDA73A] transition-colors">
+                <Phone className="w-5 h-5 text-[#A3BBF3] shrink-0" />
+                <a href="tel:+919876543210" className="text-gray-300 hover:text-[#A3BBF3] transition-colors">
                   +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#DDA73A] shrink-0" />
-                <a href="mailto:contact@lexprime.com" className="text-gray-300 hover:text-[#DDA73A] transition-colors">
+                <Mail className="w-5 h-5 text-[#A3BBF3] shrink-0" />
+                <a href="mailto:contact@lexprime.com" className="text-gray-300 hover:text-[#A3BBF3] transition-colors">
                   contact@lexprime.gov.in
                 </a>
               </li>

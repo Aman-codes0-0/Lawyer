@@ -38,7 +38,7 @@ export default function Team() {
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
+          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
             Legal Directory
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#162F6A] dark:text-white mb-4">
@@ -51,7 +51,7 @@ export default function Team() {
 
         {/* Results count */}
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 font-medium">
-          {t("team_showing")} <span className="font-bold text-[#162F6A] dark:text-[#DDA73A]">{filtered.length}</span> {t("team_of")} {lawyers.length} {t("team_lawyers")}
+          {t("team_showing")} <span className="font-bold text-[#162F6A] dark:text-[#214AAB]">{filtered.length}</span> {t("team_of")} {lawyers.length} {t("team_lawyers")}
         </p>
 
         {/* Team Grid */}
@@ -60,7 +60,7 @@ export default function Team() {
             <p className="text-2xl font-serif text-[#162F6A] dark:text-white">{t("team_no_results")}</p>
             <button
               onClick={() => setFilters({ category: "", location: "", name: "" })}
-              className="mt-6 px-6 py-2.5 border border-[#214AAB] text-[#214AAB] dark:text-[#DDA73A] rounded-lg hover:bg-[#214AAB] hover:text-white transition-colors cursor-pointer font-bold text-sm"
+              className="mt-6 px-6 py-2.5 border border-[#214AAB] text-[#214AAB] dark:text-[#214AAB] rounded-lg hover:bg-[#214AAB] hover:text-white transition-colors cursor-pointer font-bold text-sm"
             >
               {t("team_clear")}
             </button>
@@ -79,16 +79,16 @@ export default function Team() {
 
                   {/* Hover Social Links */}
                   <div className="absolute bottom-4 left-0 w-full flex justify-center gap-3 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <a href="#" className="w-9 h-9 rounded-full bg-[#DDA73A] text-[#162F6A] flex items-center justify-center hover:bg-white transition-colors font-bold text-xs shadow-md">
+                    <a href="#" className="w-9 h-9 rounded-full bg-[#214AAB] text-[#162F6A] flex items-center justify-center hover:bg-white transition-colors font-bold text-xs shadow-md">
                       IN
                     </a>
-                    <a href="#" className="w-9 h-9 rounded-full bg-[#DDA73A] text-[#162F6A] flex items-center justify-center hover:bg-white transition-colors shadow-md">
+                    <a href="#" className="w-9 h-9 rounded-full bg-[#214AAB] text-[#162F6A] flex items-center justify-center hover:bg-white transition-colors shadow-md">
                       <Mail className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
                 <div className="p-6 text-center relative">
-                  <p className="text-[#162F6A] dark:text-[#DDA73A] font-bold text-xs mb-2 uppercase tracking-widest bg-[#D2DFFF] dark:bg-[#102047] inline-block px-3 py-1 rounded-md border border-[#214AAB]/20">{lawyer.specialization}</p>
+                  <p className="text-[#162F6A] dark:text-[#214AAB] font-bold text-xs mb-2 uppercase tracking-widest bg-[#D2DFFF] dark:bg-[#102047] inline-block px-3 py-1 rounded-md border border-[#214AAB]/20">{lawyer.specialization}</p>
                   <h3 className="text-xl font-serif font-bold text-[#162F6A] dark:text-white mb-1">{lawyer.name}</h3>
                   <p className="text-gray-500 dark:text-gray-300 text-xs mb-4">{lawyer.experience}+ Years Legal Experience • {lawyer.city}</p>
                   <div className="flex items-center justify-center gap-2">
@@ -96,7 +96,7 @@ export default function Team() {
                       to="/book-consultation"
                       className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-[#214AAB] hover:bg-[#1A3E94] text-white text-xs font-bold transition-all shadow-sm"
                     >
-                      Book Consultation <ArrowRight className="w-3.5 h-3.5" />
+                      Book Consultation <ArrowRight className="w-3.5 h-3.5 text-[#A3BBF3]" />
                     </Link>
                   </div>
                 </div>

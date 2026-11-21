@@ -40,7 +40,7 @@ export default function AdminLayout() {
           <Link
             to="/"
             title="Return to Public Website"
-            className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-[#DDA73A] hover:text-white flex items-center justify-center transition-all"
+            className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-[#214AAB] hover:text-white flex items-center justify-center transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>
@@ -55,11 +55,11 @@ export default function AdminLayout() {
                 to={item.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                   isActive
-                    ? "bg-[#214AAB] text-white font-bold border-l-4 border-l-[#DDA73A] shadow-sm"
+                    ? "bg-[#214AAB] text-white font-bold border-l-4 border-l-[#214AAB] shadow-sm"
                     : "text-blue-100 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                <item.icon className={`w-5 h-5 ${isActive ? "text-[#DDA73A]" : "text-blue-200"}`} />
+                <item.icon className={`w-5 h-5 ${isActive ? "text-[#214AAB]" : "text-blue-200"}`} />
                 {item.name}
               </Link>
             );
@@ -71,11 +71,11 @@ export default function AdminLayout() {
             to="/"
             className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-blue-200 hover:text-white hover:bg-white/10 transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-[#DDA73A]" /> Back to Public Website
+            <ArrowLeft className="w-3.5 h-3.5 text-[#214AAB]" /> Back to Public Website
           </Link>
 
           <div className="flex items-center gap-3 px-3 py-2 mb-1">
-            <div className="w-9 h-9 rounded-xl bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center text-[#DDA73A] font-bold">
+            <div className="w-9 h-9 rounded-xl bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center text-[#214AAB] font-bold">
               A
             </div>
             <div>

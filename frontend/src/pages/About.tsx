@@ -7,7 +7,7 @@ export default function About() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
+          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
             Institutional Background
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#162F6A] dark:text-white mb-4">
@@ -28,8 +28,8 @@ export default function About() {
             />
           </div>
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 text-[#162F6A] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs bg-[#DDA73A]/15 px-3 py-1 rounded-md border border-[#DDA73A]/30">
-              <History className="w-4 h-4 text-[#DDA73A]" /> Established Track Record
+            <div className="inline-flex items-center gap-2 text-[#162F6A] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs bg-[#214AAB]/15 px-3 py-1 rounded-md border border-[#214AAB]/30">
+              <History className="w-4 h-4 text-[#214AAB]" /> Established Track Record
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#162F6A] dark:text-white">
               Over Two Decades of Legal Excellence
@@ -45,15 +45,15 @@ export default function About() {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-[#162F6A] border border-[#DDA73A]/30 p-8 sm:p-10 rounded-2xl text-white shadow-xl">
-            <Target className="w-10 h-10 text-[#DDA73A] mb-5" />
+          <div className="bg-[#162F6A] border border-[#214AAB]/30 p-8 sm:p-10 rounded-2xl text-white shadow-xl">
+            <Target className="w-10 h-10 text-[#214AAB] mb-5" />
             <h3 className="text-2xl font-serif font-bold mb-3 text-white">Our Mission</h3>
             <p className="text-gray-200 text-base leading-relaxed">
               To deliver strategic, ethical, and result-oriented legal counsel that protects the rights and assets of our clients through rigorous statutory analysis and dedicated courtroom advocacy.
             </p>
           </div>
           <div className="bg-white dark:bg-[#102047] border border-[#EBEAEA] dark:border-white/10 p-8 sm:p-10 rounded-2xl text-[#162F6A] dark:text-white shadow-xl">
-            <Scale className="w-10 h-10 text-[#214AAB] dark:text-[#DDA73A] mb-5" />
+            <Scale className="w-10 h-10 text-[#214AAB] dark:text-[#214AAB] mb-5" />
             <h3 className="text-2xl font-serif font-bold mb-3 text-[#162F6A] dark:text-white">Our Vision</h3>
             <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
               To be the benchmark of excellence in institutional legal counsel, recognized across India for our adherence to justice, transparency, and high legal ethics.

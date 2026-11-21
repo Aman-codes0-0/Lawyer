@@ -27,14 +27,14 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#F1F1F4] dark:bg-[#07172F] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#214AAB]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#DDA73A]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#214AAB]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-md w-full space-y-6 bg-white dark:bg-[#162F6A] p-8 sm:p-10 rounded-2xl shadow-xl border border-[#EBEAEA] dark:border-white/10 relative z-10">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors group"
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#214AAB] transition-colors group"
         >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#DDA73A]" /> Back to Home
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#214AAB]" /> Back to Home
         </Link>
 
         <div className="text-center">
@@ -58,7 +58,7 @@ export default function AdminLogin() {
           <div className="space-y-4">
             <div>
               <label className="text-sm font-semibold text-[#162F6A] dark:text-gray-200 flex items-center gap-2 mb-1.5">
-                <User className="w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" /> Email Address
+                <User className="w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" /> Email Address
               </label>
               <input
                 type="email"
@@ -71,7 +71,7 @@ export default function AdminLogin() {
             </div>
             <div>
               <label className="text-sm font-semibold text-[#162F6A] dark:text-gray-200 flex items-center gap-2 mb-1.5">
-                <Lock className="w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" /> Password
+                <Lock className="w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" /> Password
               </label>
               <input
                 type="password"
@@ -97,7 +97,7 @@ export default function AdminLogin() {
           <div className="text-center pt-2 border-t border-[#EBEAEA] dark:border-white/10">
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#214AAB] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" /> Return to Website Home
             </Link>

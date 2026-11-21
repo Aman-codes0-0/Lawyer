@@ -69,8 +69,8 @@ export default function BookConsultation() {
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
               className="max-w-lg mx-auto py-16 text-center"
             >
-              <div className="rounded-2xl border border-[#DDA73A]/30 bg-white dark:bg-[#162F6A] p-10 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#DDA73A]" />
+              <div className="rounded-2xl border border-[#214AAB]/30 bg-white dark:bg-[#162F6A] p-10 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#214AAB]" />
                 <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
                 </div>
@@ -100,11 +100,11 @@ export default function BookConsultation() {
                 className="lg:col-span-5 space-y-7 lg:sticky lg:top-32"
               >
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[#DDA73A]/40 bg-[#DDA73A]/15 text-[#162F6A] dark:text-[#DDA73A] text-xs font-bold uppercase tracking-wider mb-4">
-                    <Sparkles className="w-3.5 h-3.5 text-[#DDA73A]" /> Official Legal Assistance
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[#214AAB]/40 bg-[#214AAB]/15 text-[#162F6A] dark:text-[#214AAB] text-xs font-bold uppercase tracking-wider mb-4">
+                    <Sparkles className="w-3.5 h-3.5 text-[#214AAB]" /> Official Legal Assistance
                   </div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#162F6A] dark:text-white leading-tight">
-                    Schedule Your Legal <span className="text-[#214AAB] dark:text-[#DDA73A]">Consultation</span>
+                    Schedule Your Legal <span className="text-[#214AAB] dark:text-[#214AAB]">Consultation</span>
                   </h1>
                   <p className="text-gray-600 dark:text-gray-300 text-base mt-3 leading-relaxed">
                     Connect directly with experienced advocates. Professional legal counsel aligned with High Court and Supreme Court practice standards.
@@ -126,7 +126,7 @@ export default function BookConsultation() {
                       className="flex items-start gap-4 p-4 rounded-xl border border-[#EBEAEA] dark:border-white/10 bg-white dark:bg-[#162F6A] shadow-sm"
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#D2DFFF] dark:bg-[#102047] border border-[#214AAB]/20 flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A]" />
+                        <Icon className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB]" />
                       </div>
                       <div>
                         <h4 className="text-[#162F6A] dark:text-white text-sm font-bold">{title}</h4>
@@ -137,11 +137,11 @@ export default function BookConsultation() {
                 </div>
 
                 {/* Rating Badge */}
-                <div className="p-4 rounded-xl border border-[#DDA73A]/30 bg-white dark:bg-[#162F6A] shadow-sm flex items-center justify-between">
+                <div className="p-4 rounded-xl border border-[#214AAB]/30 bg-white dark:bg-[#162F6A] shadow-sm flex items-center justify-between">
                   <div>
-                    <div className="flex items-center gap-1 text-[#DDA73A] mb-1">
+                    <div className="flex items-center gap-1 text-[#214AAB] mb-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#DDA73A] text-[#DDA73A]" />
+                        <Star key={i} className="w-4 h-4 fill-[#214AAB] text-[#214AAB]" />
                       ))}
                       <span className="text-[#162F6A] dark:text-white text-xs font-bold ml-1.5">4.9 / 5.0</span>
                     </div>
@@ -157,8 +157,8 @@ export default function BookConsultation() {
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-7"
               >
-                <div className="rounded-2xl border border-[#EBEAEA] dark:border-[#DDA73A]/30 bg-white dark:bg-[#162F6A] p-6 sm:p-10 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#214AAB] via-[#DDA73A] to-[#214AAB]" />
+                <div className="rounded-2xl border border-[#EBEAEA] dark:border-[#214AAB]/30 bg-white dark:bg-[#162F6A] p-6 sm:p-10 shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#214AAB] via-[#214AAB] to-[#214AAB]" />
 
                   {/* Header inside card */}
                   <div className="mb-7 pb-4 border-b border-gray-100 dark:border-white/10">
@@ -183,7 +183,7 @@ export default function BookConsultation() {
                       {/* Name */}
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <User className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_name")}
+                          <User className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_name")}
                         </label>
                         <input
                           required
@@ -199,7 +199,7 @@ export default function BookConsultation() {
                       {/* Phone */}
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <Phone className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_phone")}
+                          <Phone className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_phone")}
                         </label>
                         <input
                           required
@@ -215,7 +215,7 @@ export default function BookConsultation() {
                       {/* Email */}
                       <div className="space-y-1.5 sm:col-span-2">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <Mail className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_email")}
+                          <Mail className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_email")}
                         </label>
                         <input
                           required
@@ -231,7 +231,7 @@ export default function BookConsultation() {
                       {/* Case Type */}
                       <div className="space-y-1.5 sm:col-span-2">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <FileText className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_case_type")}
+                          <FileText className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_case_type")}
                         </label>
                         <input
                           name="caseType"
@@ -246,7 +246,7 @@ export default function BookConsultation() {
                       {/* Preferred Date */}
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_date")}
+                          <Calendar className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_date")}
                         </label>
                         <input
                           required
@@ -261,7 +261,7 @@ export default function BookConsultation() {
                       {/* Preferred Time */}
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_time")}
+                          <Clock className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_time")}
                         </label>
                         <select
                           name="time"
@@ -280,7 +280,7 @@ export default function BookConsultation() {
                       {/* Description */}
                       <div className="space-y-1.5 sm:col-span-2">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <FileText className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("consult_message")}
+                          <FileText className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("consult_message")}
                         </label>
                         <textarea
                           name="message"
@@ -297,7 +297,7 @@ export default function BookConsultation() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-4 rounded-lg bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 font-bold text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+                        className="w-full py-4 rounded-lg bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 font-bold text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                       >
                         {isSubmitting ? (
                           <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

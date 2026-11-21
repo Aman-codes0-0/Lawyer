@@ -38,7 +38,7 @@ export default function FAQ() {
         
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
+          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
             Citizen & Client Legal Guidance
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#162F6A] dark:text-white mb-4">
@@ -55,7 +55,7 @@ export default function FAQ() {
             <div 
               key={i} 
               className={`border rounded-xl overflow-hidden transition-all duration-200 bg-white dark:bg-[#162F6A] shadow-sm ${
-                openIndex === i ? 'border-[#214AAB] ring-1 ring-[#214AAB] dark:border-[#DDA73A]' : 'border-[#EBEAEA] dark:border-white/10 hover:border-[#214AAB]/50'
+                openIndex === i ? 'border-[#214AAB] ring-1 ring-[#214AAB] dark:border-[#214AAB]' : 'border-[#EBEAEA] dark:border-white/10 hover:border-[#214AAB]/50'
               }`}
             >
               <button
@@ -64,7 +64,7 @@ export default function FAQ() {
               >
                 <span className="font-bold text-[#162F6A] dark:text-white text-base sm:text-lg">{faq.question}</span>
                 {openIndex === i ? (
-                  <ChevronUp className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A] flex-shrink-0" />
+                  <ChevronUp className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB] flex-shrink-0" />
                 ) : (
                   <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                 )}
@@ -90,7 +90,7 @@ export default function FAQ() {
           </p>
           <Link 
             to="/contact"
-            className="inline-block bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-8 py-3 rounded-lg font-bold text-sm transition-all shadow-md cursor-pointer"
+            className="inline-block bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 px-8 py-3 rounded-lg font-bold text-sm transition-all shadow-md cursor-pointer"
           >
             Submit Formal Inquiry
           </Link>

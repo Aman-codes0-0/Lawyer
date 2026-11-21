@@ -79,13 +79,13 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#162F6A] shadow-xl border-b border-[#DDA73A]/30 py-3"
+          ? "bg-[#162F6A] shadow-xl border-b border-[#214AAB]/30 py-3"
           : "bg-[#162F6A] border-b border-[#102047] py-4"
       }`}
     >
       {/* Optional Announcement Bar */}
       {settings.showAnnouncementBar && (
-        <div className="bg-[#DDA73A] text-[#162F6A] text-xs font-bold py-1.5 px-4 text-center border-b border-[#162F6A]/20 flex items-center justify-center gap-2 -mt-4 mb-3">
+        <div className="bg-[#214AAB] text-[#162F6A] text-xs font-bold py-1.5 px-4 text-center border-b border-[#162F6A]/20 flex items-center justify-center gap-2 -mt-4 mb-3">
           <span className="bg-[#162F6A] text-white text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Announcement</span>
           <span>{settings.announcementText}</span>
         </div>
@@ -126,10 +126,10 @@ export default function Navbar() {
               <Link
                 key={link.nameKey}
                 to={link.href}
-                className="text-white hover:text-[#DDA73A] transition-colors font-medium text-sm lg:text-sm uppercase tracking-wider whitespace-nowrap relative py-1 group"
+                className="text-white hover:text-[#214AAB] transition-colors font-medium text-sm lg:text-sm uppercase tracking-wider whitespace-nowrap relative py-1 group"
               >
                 {t(link.nameKey)}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#DDA73A] transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#214AAB] transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
 
@@ -137,53 +137,22 @@ export default function Navbar() {
             {mounted && settings.showLangToggle && (
               <button
                 onClick={() => setLang(lang === "en" ? "hi" : "en")}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-md border border-white/20 text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all text-xs font-bold cursor-pointer"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-md border border-white/20 text-white hover:border-[#214AAB] hover:text-[#214AAB] transition-all text-xs font-bold cursor-pointer"
                 aria-label="Toggle language"
                 id="lang-toggle-desktop"
               >
-                <span className={lang === "en" ? "text-[#DDA73A]" : "text-white/60"}>EN</span>
+                <span className={lang === "en" ? "text-white" : "text-white/60"}>EN</span>
                 <span className="text-white/30 mx-0.5">|</span>
-                <span className={lang === "hi" ? "text-[#DDA73A]" : "text-white/60"}>हि</span>
+                <span className={lang === "hi" ? "text-white" : "text-white/60"}>हि</span>
               </button>
             )}
 
-            {/* Dark Mode Toggle */}
-            {mounted && settings.showThemeToggle && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-8 h-8 rounded-md border border-white/20 flex items-center justify-center text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all cursor-pointer"
-                aria-label="Toggle dark mode"
-              >
-                <AnimatePresence mode="wait" initial={false}>
-                  {theme === "dark" ? (
-                    <motion.span
-                      key="sun"
-                      initial={{ opacity: 0, rotate: -90 }}
-                      animate={{ opacity: 1, rotate: 0 }}
-                      exit={{ opacity: 0, rotate: 90 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Sun className="w-4 h-4 text-[#DDA73A]" />
-                    </motion.span>
-                  ) : (
-                    <motion.span
-                      key="moon"
-                      initial={{ opacity: 0, rotate: 90 }}
-                      animate={{ opacity: 1, rotate: 0 }}
-                      exit={{ opacity: 0, rotate: -90 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Moon className="w-4 h-4 text-white" />
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </button>
-            )}
+
 
             {settings.showConsultationBtn && (
               <Link
                 to="/book-consultation"
-                className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-5 py-2.5 rounded-md font-bold text-sm tracking-wide transition-all shadow-md hover:shadow-[#214AAB]/30"
+                className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 px-5 py-2.5 rounded-md font-bold text-sm tracking-wide transition-all shadow-md hover:shadow-[#214AAB]/30"
               >
                 {t("nav_consult")}
               </Link>
@@ -196,16 +165,16 @@ export default function Navbar() {
                 <Link
                   to="/lawyer/login"
                   id="nav-lawyer-login"
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-white/20 text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all text-xs font-semibold"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-white/20 text-white hover:border-[#214AAB] hover:text-[#214AAB] transition-all text-xs font-semibold"
                 >
-                  <UserCircle2 className="w-4 h-4 text-[#DDA73A]" />
+                  <UserCircle2 className="w-4 h-4 text-[#214AAB]" />
                   Lawyer Login
                 </Link>
               ) : (
                 <button
                   id="nav-lawyer-avatar"
                   onClick={() => setLawyerDropdown(!lawyerDropdown)}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#DDA73A]/40 bg-[#DDA73A]/15 text-[#DDA73A] hover:bg-[#DDA73A]/25 transition-all text-xs font-semibold cursor-pointer"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#214AAB]/40 bg-[#214AAB]/15 text-[#214AAB] hover:bg-[#214AAB]/25 transition-all text-xs font-semibold cursor-pointer"
                 >
                   <UserCircle2 className="w-4 h-4" />
                   <span className="max-w-[90px] truncate">{lawyer?.name.split(" ")[0]}</span>
@@ -218,7 +187,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 w-52 bg-[#162F6A] border border-[#DDA73A]/30 rounded-xl shadow-2xl overflow-hidden z-50"
+                    className="absolute right-0 top-full mt-2 w-52 bg-[#162F6A] border border-[#214AAB]/30 rounded-xl shadow-2xl overflow-hidden z-50"
                   >
                     <div className="px-4 py-3 border-b border-white/10">
                       <p className="text-white font-semibold text-sm truncate">{lawyer?.name}</p>
@@ -229,7 +198,7 @@ export default function Navbar() {
                         to="/lawyer/dashboard"
                         id="nav-lawyer-dashboard"
                         onClick={() => setLawyerDropdown(false)}
-                        className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-200 hover:text-[#DDA73A] hover:bg-white/5 transition-all"
+                        className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-200 hover:text-[#214AAB] hover:bg-white/5 transition-all"
                       >
                         <LayoutDashboard className="w-4 h-4" />
                         My Dashboard
@@ -259,23 +228,23 @@ export default function Navbar() {
                 aria-label="Toggle language"
                 id="lang-toggle-mobile"
               >
-                <span className={lang === "en" ? "text-[#DDA73A]" : "text-white/60"}>EN</span>
+                <span className={lang === "en" ? "text-[#214AAB]" : "text-white/60"}>EN</span>
                 <span className="text-white/30">|</span>
-                <span className={lang === "hi" ? "text-[#DDA73A]" : "text-white/60"}>हि</span>
+                <span className={lang === "hi" ? "text-[#214AAB]" : "text-white/60"}>हि</span>
               </button>
             )}
             {mounted && settings.showThemeToggle && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="min-h-[44px] min-w-[44px] rounded-md border border-white/20 flex items-center justify-center text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all"
+                className="min-h-[44px] min-w-[44px] rounded-md border border-white/20 flex items-center justify-center text-white hover:border-[#214AAB] hover:text-[#214AAB] transition-all"
                 aria-label="Toggle dark mode"
               >
-                {theme === "dark" ? <Sun className="w-4 h-4 text-[#DDA73A]" /> : <Moon className="w-4 h-4" />}
+                {theme === "dark" ? <Sun className="w-4 h-4 text-[#214AAB]" /> : <Moon className="w-4 h-4" />}
               </button>
             )}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-[#DDA73A] min-h-[44px] min-w-[44px] flex items-center justify-center rounded-md"
+              className="text-white hover:text-[#214AAB] min-h-[44px] min-w-[44px] flex items-center justify-center rounded-md"
               aria-label="Menu"
             >
               {mobileMenuOpen ? (
@@ -295,7 +264,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100dvh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#162F6A] border-t border-[#DDA73A]/20 overflow-y-auto fixed top-[65px] left-0 right-0 z-40 pb-20 shadow-2xl"
+            className="md:hidden bg-[#162F6A] border-t border-[#214AAB]/20 overflow-y-auto fixed top-[65px] left-0 right-0 z-40 pb-20 shadow-2xl"
           >
             <div className="px-4 pt-4 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -303,7 +272,7 @@ export default function Navbar() {
                   key={link.nameKey}
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium text-white hover:text-[#DDA73A] hover:bg-white/5 rounded-lg transition-colors border-b border-white/5"
+                  className="block px-4 py-3 text-lg font-medium text-white hover:text-[#214AAB] hover:bg-white/5 rounded-lg transition-colors border-b border-white/5"
                 >
                   {t(link.nameKey)}
                 </Link>
@@ -313,7 +282,7 @@ export default function Navbar() {
                   <Link
                     to="/book-consultation"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full text-center bg-[#214AAB] text-white border border-[#DDA73A]/40 px-6 py-3.5 rounded-lg font-bold text-base shadow-lg"
+                    className="block w-full text-center bg-[#214AAB] text-white border border-[#214AAB]/40 px-6 py-3.5 rounded-lg font-bold text-base shadow-lg"
                   >
                     {t("nav_book")}
                   </Link>
@@ -324,7 +293,7 @@ export default function Navbar() {
                       to="/lawyer/login"
                       id="nav-mobile-lawyer-login"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-center gap-2 w-full text-center border border-[#DDA73A]/40 text-[#DDA73A] px-6 py-3 rounded-lg font-bold text-base"
+                      className="flex items-center justify-center gap-2 w-full text-center border border-[#214AAB]/40 text-[#214AAB] px-6 py-3 rounded-lg font-bold text-base"
                     >
                       <UserCircle2 className="w-4 h-4" />
                       Lawyer Login
@@ -338,7 +307,7 @@ export default function Navbar() {
                           to="/lawyer/dashboard"
                           id="nav-mobile-lawyer-dashboard"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-[#DDA73A]/10 border border-[#DDA73A]/30 text-[#DDA73A] rounded text-sm font-semibold"
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-[#214AAB]/10 border border-[#214AAB]/30 text-[#214AAB] rounded text-sm font-semibold"
                         >
                           <LayoutDashboard className="w-3.5 h-3.5" />
                           Dashboard

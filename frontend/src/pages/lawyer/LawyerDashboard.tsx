@@ -35,7 +35,7 @@ function KpiCard({
   delay?: number;
 }) {
   const colors = {
-    gold:    { bg: "bg-[#DDA73A]/15",    border: "border-[#DDA73A]/30",    text: "text-[#DDA73A]",    ring: "ring-[#DDA73A]/20" },
+    gold:    { bg: "bg-[#214AAB]/15",    border: "border-[#214AAB]/30",    text: "text-[#214AAB]",    ring: "ring-[#214AAB]/20" },
     emerald: { bg: "bg-emerald-500/15", border: "border-emerald-500/30", text: "text-emerald-600 dark:text-emerald-400", ring: "ring-emerald-400/20" },
     blue:    { bg: "bg-[#214AAB]/15",  border: "border-[#214AAB]/30",  text: "text-[#214AAB] dark:text-[#BAE6FD]",  ring: "ring-[#214AAB]/20" },
     purple:  { bg: "bg-[#1D0A69]/15", border: "border-[#1D0A69]/30", text: "text-[#162F6A] dark:text-[#D2DFFF]", ring: "ring-[#1D0A69]/20" },
@@ -65,7 +65,7 @@ function ProfileRow({ icon: Icon, label, value }: { icon: React.ElementType; lab
   return (
     <div className="flex items-start gap-3 py-3.5 border-b border-[#EBEAEA] dark:border-white/10 last:border-0">
       <div className="w-8 h-8 rounded-lg bg-[#214AAB]/10 border border-[#214AAB]/20 flex items-center justify-center shrink-0 mt-0.5">
-        <Icon className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" />
+        <Icon className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" />
       </div>
       <div className="min-w-0">
         <p className="text-xs text-[#676B7E] dark:text-gray-400 uppercase tracking-wider font-semibold">{label}</p>
@@ -107,7 +107,7 @@ export default function LawyerDashboardPage() {
     return (
       <div className="min-h-[100dvh] bg-[#F1F1F4] dark:bg-[#0E1B38] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 rounded-full border-2 border-[#214AAB]/20 border-t-[#DDA73A] animate-spin" />
+          <div className="w-12 h-12 rounded-full border-2 border-[#214AAB]/20 border-t-[#214AAB] animate-spin" />
           <p className="text-[#162F6A] dark:text-[#BAE6FD] text-sm font-medium">Loading your dashboard…</p>
         </div>
       </div>
@@ -140,8 +140,8 @@ export default function LawyerDashboardPage() {
         {/* Avatar */}
         <div className="px-4 py-5 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center shrink-0">
-              <span className="text-[#DDA73A] font-serif font-bold text-sm">{initials}</span>
+            <div className="w-10 h-10 rounded-xl bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center shrink-0">
+              <span className="text-[#214AAB] font-serif font-bold text-sm">{initials}</span>
             </div>
             <div className="min-w-0">
               <p className="text-white text-sm font-semibold truncate">{lawyer.name}</p>
@@ -159,7 +159,7 @@ export default function LawyerDashboardPage() {
               className={`
                 w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer
                 ${activeNav === id
-                  ? "bg-[#214AAB] text-white border-l-4 border-l-[#DDA73A] font-semibold shadow-sm"
+                  ? "bg-[#214AAB] text-white border-l-4 border-l-[#214AAB] font-semibold shadow-sm"
                   : "text-blue-100 hover:text-white hover:bg-white/10"}
               `}
             >
@@ -218,10 +218,10 @@ export default function LawyerDashboardPage() {
           <div className="flex items-center gap-3">
             <button className="relative w-9 h-9 rounded-xl bg-[#F1F1F4] dark:bg-white/10 border border-[#EBEAEA] dark:border-white/20 flex items-center justify-center text-[#162F6A] dark:text-white hover:bg-slate-200 transition-colors cursor-pointer">
               <Bell className="w-4 h-4 text-[#214AAB] dark:text-[#BAE6FD]" />
-              <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-[#DDA73A] rounded-full" />
+              <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-[#214AAB] rounded-full" />
             </button>
-            <div className="w-9 h-9 rounded-xl bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center">
-              <span className="text-[#8C6207] dark:text-[#DDA73A] font-bold text-xs">{initials}</span>
+            <div className="w-9 h-9 rounded-xl bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center">
+              <span className="text-[#8C6207] dark:text-[#214AAB] font-bold text-xs">{initials}</span>
             </div>
           </div>
         </header>
@@ -236,9 +236,9 @@ export default function LawyerDashboardPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative overflow-hidden rounded-2xl border border-[#DDA73A]/30 bg-gradient-to-r from-[#162F6A] via-[#1D0A69] to-[#214AAB] p-5 sm:p-6 text-white shadow-md"
+                className="relative overflow-hidden rounded-2xl border border-[#214AAB]/30 bg-gradient-to-r from-[#162F6A] via-[#1D0A69] to-[#214AAB] p-5 sm:p-6 text-white shadow-md"
               >
-                <div className="absolute -right-12 -top-12 w-48 h-48 bg-[#DDA73A]/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -right-12 -top-12 w-48 h-48 bg-[#214AAB]/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute -right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                   <Scale className="w-24 h-24 text-white/5" />
                 </div>
@@ -282,7 +282,7 @@ export default function LawyerDashboardPage() {
                     <h3 className="text-[#162F6A] dark:text-white font-bold font-serif">Profile Summary</h3>
                     <button
                       onClick={() => setActiveNav("profile")}
-                      className="text-xs text-[#214AAB] dark:text-[#DDA73A] hover:underline font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                      className="text-xs text-[#214AAB] dark:text-[#214AAB] hover:underline font-semibold flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       View all <ChevronRight className="w-3 h-3" />
                     </button>
@@ -304,7 +304,7 @@ export default function LawyerDashboardPage() {
                 >
                   <h3 className="text-[#162F6A] dark:text-white font-bold font-serif mb-4">Recent Activity</h3>
                   <div className="space-y-0">
-                    <ActivityItem icon={User}     title="Account active"       time="Just now"         color="bg-[#DDA73A]/15 text-[#8C6207] dark:text-[#DDA73A]" />
+                    <ActivityItem icon={User}     title="Account active"       time="Just now"         color="bg-[#214AAB]/15 text-[#8C6207] dark:text-[#214AAB]" />
                     <ActivityItem icon={Shield}   title="Verified Member"      time="Active"           color="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" />
                     <ActivityItem icon={Clock}    title="Profile synced"       time="Up to date"       color="bg-[#214AAB]/15 text-[#214AAB] dark:text-[#BAE6FD]" />
                     <ActivityItem icon={Bell}     title="No new notifications" time="All caught up"     color="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" />
@@ -334,11 +334,11 @@ export default function LawyerDashboardPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <p className="text-sm font-semibold text-[#162F6A] dark:text-white truncate">{label}</p>
-                        {badge && <span className="shrink-0 text-xs px-1.5 py-0.5 rounded bg-[#DDA73A]/20 text-[#8C6207] dark:text-[#DDA73A] font-semibold">{badge}</span>}
+                        {badge && <span className="shrink-0 text-xs px-1.5 py-0.5 rounded bg-[#214AAB]/20 text-[#8C6207] dark:text-[#214AAB] font-semibold">{badge}</span>}
                       </div>
                       <p className="text-xs text-[#676B7E] dark:text-gray-300 mt-0.5">{desc}</p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-[#214AAB] dark:group-hover:text-[#DDA73A] transition-colors shrink-0" />
+                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-[#214AAB] dark:group-hover:text-[#214AAB] transition-colors shrink-0" />
                   </Link>
                 ))}
               </motion.div>
@@ -349,8 +349,8 @@ export default function LawyerDashboardPage() {
           {activeNav === "profile" && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-2xl space-y-6">
               <div className="rounded-xl border border-[#EBEAEA] dark:border-white/10 bg-white dark:bg-[#162F6A] p-6 flex items-center gap-5 shadow-sm">
-                <div className="w-20 h-20 rounded-2xl bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center shrink-0">
-                  <span className="text-[#8C6207] dark:text-[#DDA73A] font-serif text-2xl font-bold">{initials}</span>
+                <div className="w-20 h-20 rounded-2xl bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center shrink-0">
+                  <span className="text-[#8C6207] dark:text-[#214AAB] font-serif text-2xl font-bold">{initials}</span>
                 </div>
                 <div>
                   <h2 className="text-[#162F6A] dark:text-white text-xl font-bold font-serif">{lawyer.name}</h2>

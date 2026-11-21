@@ -36,7 +36,7 @@ export default function Contact() {
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
+          <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
             Legal Inquiries & Helpdesk
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#162F6A] dark:text-white mb-4">
@@ -51,15 +51,15 @@ export default function Contact() {
 
           {/* Contact Info (Left Sidebar) */}
           <div className="space-y-8">
-            <div className="bg-[#162F6A] border border-[#DDA73A]/30 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
-              <h3 className="text-2xl font-serif font-bold mb-7 relative z-10 text-white border-b-2 border-[#DDA73A] pb-2 inline-block">
+            <div className="bg-[#162F6A] border border-[#214AAB]/30 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+              <h3 className="text-2xl font-serif font-bold mb-7 relative z-10 text-white border-b-2 border-[#214AAB] pb-2 inline-block">
                 {t("contact_info_title")}
               </h3>
 
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#DDA73A]/15 border border-[#DDA73A]/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="w-5 h-5 text-[#DDA73A]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#214AAB]/15 border border-[#214AAB]/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5 text-[#214AAB]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-base text-white">{t("contact_location_title")}</h4>
@@ -68,8 +68,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#DDA73A]/15 border border-[#DDA73A]/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <Phone className="w-5 h-5 text-[#DDA73A]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#214AAB]/15 border border-[#214AAB]/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <Phone className="w-5 h-5 text-[#214AAB]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-base text-white">{t("contact_phone_title")}</h4>
@@ -78,8 +78,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#DDA73A]/15 border border-[#DDA73A]/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="w-5 h-5 text-[#DDA73A]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#214AAB]/15 border border-[#214AAB]/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <Mail className="w-5 h-5 text-[#214AAB]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-base text-white">{t("contact_email_title")}</h4>
@@ -116,7 +116,7 @@ export default function Contact() {
                 <>
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100 dark:border-white/10">
                     <div className="w-10 h-10 rounded-lg bg-[#D2DFFF] dark:bg-[#102047] border border-[#214AAB]/20 flex items-center justify-center">
-                      <MessageSquare className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A]" />
+                      <MessageSquare className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB]" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-serif font-bold text-[#162F6A] dark:text-white">{t("contact_form_title")}</h3>
@@ -128,7 +128,7 @@ export default function Contact() {
                     {/* Email */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("contact_your_email")}
+                        <Mail className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("contact_your_email")}
                       </label>
                       <input
                         required
@@ -146,7 +146,7 @@ export default function Contact() {
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between">
                         <label className="text-xs font-bold text-[#162F6A] dark:text-gray-200 uppercase tracking-wider flex items-center gap-1.5">
-                          <MessageSquare className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#DDA73A]" /> {t("contact_your_query")}
+                          <MessageSquare className="w-3.5 h-3.5 text-[#214AAB] dark:text-[#214AAB]" /> {t("contact_your_query")}
                         </label>
                         <span className={`text-xs font-medium ${query.length > MAX_CHARS * 0.9 ? "text-red-500" : "text-gray-400"}`}>
                           {MAX_CHARS - query.length} {t("contact_chars_left")}
@@ -176,7 +176,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       id="contact-submit"
-                      className="flex items-center justify-center w-full md:w-auto bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-8 py-3.5 rounded-lg font-bold text-sm transition-all shadow-md group cursor-pointer"
+                      className="flex items-center justify-center w-full md:w-auto bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 px-8 py-3.5 rounded-lg font-bold text-sm transition-all shadow-md group cursor-pointer"
                     >
                       {t("contact_send")} <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>

@@ -31,7 +31,7 @@ export default function AdminSiteSettings() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#DDA73A]/20 text-[#162F6A] dark:text-[#DDA73A] border border-[#DDA73A]/40 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#214AAB]/20 text-[#162F6A] dark:text-[#214AAB] border border-[#214AAB]/40 mb-2">
             <Sliders className="w-3.5 h-3.5" /> Frontend Configuration
           </div>
           <h1 className="text-3xl font-serif font-bold text-[#162F6A] dark:text-white">
@@ -54,7 +54,7 @@ export default function AdminSiteSettings() {
       <div className="bg-white dark:bg-[#162F6A] rounded-2xl p-6 shadow-sm border border-[#EBEAEA] dark:border-white/10 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center text-[#DDA73A]">
+            <div className="w-10 h-10 rounded-xl bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center text-[#214AAB]">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -103,7 +103,7 @@ export default function AdminSiteSettings() {
         {/* Home Page Sections */}
         <div className="bg-white dark:bg-[#162F6A] rounded-2xl p-6 shadow-sm border border-[#EBEAEA] dark:border-white/10 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-[#EBEAEA] dark:border-white/10">
-            <Shield className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A]" />
+            <Shield className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB]" />
             <h2 className="font-serif font-bold text-lg text-[#162F6A] dark:text-white">
               Home Page Sections
             </h2>
@@ -153,7 +153,7 @@ export default function AdminSiteSettings() {
           {/* Navigation Items */}
           <div className="bg-white dark:bg-[#162F6A] rounded-2xl p-6 shadow-sm border border-[#EBEAEA] dark:border-white/10 space-y-4">
             <div className="flex items-center gap-2 pb-3 border-b border-[#EBEAEA] dark:border-white/10">
-              <Sliders className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A]" />
+              <Sliders className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB]" />
               <h2 className="font-serif font-bold text-lg text-[#162F6A] dark:text-white">
                 Navbar &amp; Header
               </h2>
@@ -189,7 +189,7 @@ export default function AdminSiteSettings() {
           {/* Visuals & Extras */}
           <div className="bg-white dark:bg-[#162F6A] rounded-2xl p-6 shadow-sm border border-[#EBEAEA] dark:border-white/10 space-y-4">
             <div className="flex items-center gap-2 pb-3 border-b border-[#EBEAEA] dark:border-white/10">
-              <Sparkles className="w-5 h-5 text-[#214AAB] dark:text-[#DDA73A]" />
+              <Sparkles className="w-5 h-5 text-[#214AAB] dark:text-[#214AAB]" />
               <h2 className="font-serif font-bold text-lg text-[#162F6A] dark:text-white">
                 Visuals &amp; Extras
               </h2>
@@ -226,7 +226,7 @@ export default function AdminSiteSettings() {
       </div>
 
       <div className="p-4 rounded-xl bg-blue-50 dark:bg-[#102047] border border-blue-200 dark:border-blue-500/20 text-xs text-[#214AAB] dark:text-blue-200 flex items-center gap-2">
-        <CheckCircle className="w-4 h-4 shrink-0 text-[#DDA73A]" />
+        <CheckCircle className="w-4 h-4 shrink-0 text-[#214AAB]" />
         <span>
           All settings are saved automatically to persistent local storage and reflected in real-time across the client application.
         </span>

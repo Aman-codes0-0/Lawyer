@@ -42,9 +42,9 @@ export default function Home() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
           className="absolute inset-0 z-0 opacity-15 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1400&auto=format&fit=crop')" }}
+          // style={{ backgroundImage: "url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1400&auto=format&fit=crop')" }}
         />
-        <div className="absolute inset-0 bg-[#162F6A]/70 z-10" />
+        <div className="absolute inset-0 bg-[#FFFFFF]" />
 
         <div className="relative z-20 max-w-5xl mx-auto px-5 sm:px-8 text-center space-y-7">
           {/* Badge */}
@@ -52,7 +52,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DDA73A]/15 border border-[#DDA73A]/40 text-[#DDA73A] text-xs font-bold uppercase tracking-widest"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#214AAB]/15 border border-[#214AAB]/40 text-[#214AAB] text-xs font-bold uppercase tracking-widest"
           >
             <Scale className="w-4 h-4" /> India's Premier Legal Platform
           </motion.div>
@@ -62,10 +62,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-[1.08]"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-blue-800 leading-[1.08]"
           >
             {t("hero_heading").split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="text-[#DDA73A]">{t("hero_heading").split(" ").at(-1)}</span>
+            <div className="text-blue-600">{t("hero_heading").split(" ").at(-1)}</div>
           </motion.h1>
 
           {/* Tagline */}
@@ -73,7 +73,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-200 font-serif italic max-w-2xl mx-auto border-l-4 border-[#DDA73A] pl-5 text-left"
+            className="text-lg text-[1.4rem] text-navy font-bold font-serif max-w-2xl mx-auto border-l-4 border-[#214AAB] pl-5 text-left"
           >
             {t("hero_tagline")}
           </motion.p>
@@ -83,7 +83,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto"
+            className="text-[1.5rem] font text-navy leading-relaxed max-w-2xl mx-auto"
           >
             {t("hero_subtext")}
           </motion.p>
@@ -97,13 +97,13 @@ export default function Home() {
           >
             <Link
               to="/book-consultation"
-              className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-8 py-4 rounded-xl font-bold text-base transition-all shadow-xl text-center inline-flex items-center justify-center gap-2"
+              className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 px-8 py-4 rounded-xl font-bold text-base transition-all shadow-xl text-center inline-flex items-center justify-center gap-2"
             >
-              {t("hero_book")} <ArrowRight className="w-5 h-5" />
+              {t("hero_book")}
             </Link>
             <Link
               to="/about"
-              className="border-2 border-[#DDA73A] text-[#DDA73A] hover:bg-[#DDA73A] hover:text-[#162F6A] px-8 py-4 rounded-xl font-bold text-base transition-all text-center"
+              className="border-2 border-[#214AAB] hover:border-[#FFC107] text-[#214AAB] hover:bg-[#FFC107] hover:text-blue px-8 py-4 rounded-xl font-bold text-base transition-all text-center"
             >
               {t("hero_learn")}
             </Link>
@@ -122,9 +122,9 @@ export default function Home() {
               { icon: Users,     stat: "98%",   label: t("stat_success") },
             ].map((s) => (
               <div key={s.label} className="text-center space-y-1">
-                <s.icon className="w-5 h-5 text-[#DDA73A] mx-auto" />
+                <s.icon className="w-5 h-5 text-[#214AAB] mx-auto" />
                 <p className="font-serif font-bold text-white text-2xl">{s.stat}</p>
-                <p className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold">{s.label}</p>
+                <p className="text-[11px] text-black-400 uppercase tracking-wider font-semibold">{s.label}</p>
               </div>
             ))}
           </motion.div>
@@ -188,11 +188,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold border cursor-default ${
-                    pill.gold
-                      ? "bg-[#DDA73A] text-[#162F6A] border-[#DDA73A]"
-                      : "bg-[#214AAB] text-white border-[#214AAB]"
-                  }`}
+                  className={`px-4 py-1.5 rounded-full text-xs font-bold border cursor-default bg-[#214AAB] text-white border-[#214AAB]`}
                 >
                   {pill.text}
                 </motion.span>
@@ -214,13 +210,13 @@ export default function Home() {
             <ul className="space-y-3 mt-2">
               {tArr("why_features").map((feature, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm text-[#162F6A] font-medium bg-[#F1F1F4] p-3.5 rounded-xl border border-[#EBEAEA]">
-                  <CheckCircle2 className="w-5 h-5 text-[#DDA73A] flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#214AAB] flex-shrink-0" />
                   {feature}
                 </li>
               ))}
             </ul>
-            <Link to="/about" className="inline-flex items-center text-[#162F6A] font-bold hover:text-[#214AAB] transition-colors group text-sm border-b-2 border-[#DDA73A] pb-0.5 mt-2">
-              {t("why_link")} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform text-[#DDA73A]" />
+            <Link to="/about" className="inline-flex items-center text-[#162F6A] font-bold hover:text-[#214AAB] transition-colors group text-sm border-b-2 border-[#214AAB] pb-0.5 mt-2">
+              {t("why_link")} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform text-[#214AAB]" />
             </Link>
           </motion.div>
         </div>
@@ -255,13 +251,13 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#102047]/80 via-[#102047]/20 to-transparent" />
                   {/* Badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1 bg-[#DDA73A]/20 border border-[#DDA73A]/50 px-2.5 py-1 rounded-full">
-                    <Award className="w-3 h-3 text-[#DDA73A]" />
-                    <span className="text-[9px] font-bold text-[#DDA73A] uppercase tracking-wider">{lawyer.specialization}</span>
+                  <div className="absolute top-3 left-3 flex items-center gap-1 bg-[#214AAB]/20 border border-[#214AAB]/50 px-2.5 py-1 rounded-full">
+                    <Award className="w-3 h-3 text-[#214AAB]" />
+                    <span className="text-[9px] font-bold text-[#214AAB] uppercase tracking-wider">{lawyer.specialization}</span>
                   </div>
                   {/* Experience */}
-                  <div className="absolute bottom-3 right-3 bg-[#162F6A]/90 border border-[#DDA73A]/30 px-2.5 py-1 rounded-lg">
-                    <span className="text-[#DDA73A] text-xs font-bold">{lawyer.experience}+ yrs</span>
+                  <div className="absolute bottom-3 right-3 bg-[#162F6A]/90 border border-[#214AAB]/30 px-2.5 py-1 rounded-lg">
+                    <span className="text-[#214AAB] text-xs font-bold">{lawyer.experience}+ yrs</span>
                   </div>
                 </div>
 
@@ -274,7 +270,7 @@ export default function Home() {
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-[#EBEAEA]">
                     {/* Rating */}
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[#DDA73A] font-bold text-sm">★ {lawyer.rating}</span>
+                      <span className="text-[#214AAB] font-bold text-sm">★ {lawyer.rating}</span>
                       <span className="text-[#676B7E] text-xs">({lawyer.reviewCount})</span>
                     </div>
                     <Link
@@ -312,7 +308,7 @@ export default function Home() {
           ].map((c) => (
             <div key={c.label} className="flex items-start gap-3 bg-white rounded-xl p-4 border border-[#EBEAEA] shadow-sm">
               <div className="w-9 h-9 rounded-lg bg-[#162F6A]/8 border border-[#162F6A]/15 flex items-center justify-center shrink-0">
-                <c.icon className="w-4 h-4 text-[#DDA73A]" />
+                <c.icon className="w-4 h-4 text-[#214AAB]" />
               </div>
               <div>
                 <p className="text-[10px] text-[#676B7E] uppercase tracking-wider font-bold mb-0.5">{c.label}</p>
@@ -326,18 +322,18 @@ export default function Home() {
 
       {/* ── CTA ── */}
       {settings.showCtaBanner && (
-        <section className="bg-[#162F6A] py-20 relative overflow-hidden border-t border-[#DDA73A]/30 px-4 sm:px-8">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#162F6A] via-[#102047]/90 to-[#162F6A]" />
+        <section className="bg-white py-20 relative overflow-hidden border-t border-[#214AAB]/30 px-4 sm:px-8">
+        {/* <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center" /> */}
+        <div className="absolute inset-0 bg-white" />
         <div className="relative z-10 max-w-2xl mx-auto text-center space-y-5">
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">{t("cta_heading")}</h2>
-          <p className="text-xl text-[#DDA73A] font-serif italic">{t("cta_sub")}</p>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-black">{t("cta_heading")}</h2>
+          <p className="text-[1rem] text-navy font-bold font-serif">{t("cta_sub")}</p>
           <div className="pt-4">
             <Link
               to="/book-consultation"
-              className="bg-[#DDA73A] hover:bg-[#FFC107] text-[#162F6A] px-10 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 text-base shadow-xl inline-flex items-center gap-2"
+              className="bg-[#FFC107] hover:bg-[#FFC107] text-[#162F6A] px-10 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 text-base shadow-xl inline-flex items-center gap-2"
             >
-              {t("cta_button")} <ArrowRight className="w-5 h-5" />
+              {t("cta_button")} 
             </Link>
           </div>
         </div>

@@ -78,14 +78,14 @@ export default function AdminAppointments() {
           onClick={loadAppointments}
           className="flex items-center gap-2 text-sm text-[#162F6A] dark:text-[#BAE6FD] hover:text-[#214AAB] border border-[#EBEAEA] dark:border-white/20 bg-white dark:bg-[#162F6A] px-3.5 py-2 rounded-xl transition-colors cursor-pointer shadow-sm"
         >
-          <RefreshCw className="w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" /> Refresh
+          <RefreshCw className="w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" /> Refresh
         </button>
       </div>
 
       {/* Status Summary */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { label: "Pending", status: "PENDING", colorClasses: "bg-[#DDA73A]/15 text-[#8C6207] dark:text-[#DDA73A] border-[#DDA73A]/30", count: appointments.filter((a) => a.status === "PENDING").length },
+          { label: "Pending", status: "PENDING", colorClasses: "bg-[#214AAB]/15 text-[#8C6207] dark:text-[#214AAB] border-[#214AAB]/30", count: appointments.filter((a) => a.status === "PENDING").length },
           { label: "Approved", status: "APPROVED", colorClasses: "bg-[#214AAB]/15 text-[#214AAB] dark:text-[#BAE6FD] border-[#214AAB]/30", count: appointments.filter((a) => a.status === "APPROVED").length },
           { label: "Rejected", status: "REJECTED", colorClasses: "bg-red-500/10 text-red-500 border-red-500/30", count: appointments.filter((a) => a.status === "REJECTED").length },
         ].map((s) => (
@@ -135,7 +135,7 @@ export default function AdminAppointments() {
                     </td>
                     <td className="px-6 py-4">
                       <span className={`px-2.5 py-1 text-xs font-bold rounded-full ${
-                        apt.status === "PENDING" ? "bg-[#DDA73A]/20 text-[#8C6207] dark:text-[#DDA73A] border border-[#DDA73A]/40" :
+                        apt.status === "PENDING" ? "bg-[#214AAB]/20 text-[#8C6207] dark:text-[#214AAB] border border-[#214AAB]/40" :
                         apt.status === "APPROVED" ? "bg-[#214AAB]/15 text-[#214AAB] dark:text-[#BAE6FD] border border-[#214AAB]/30" :
                         apt.status === "REJECTED" ? "bg-red-500/10 text-red-500 border border-red-500/30" :
                         "bg-gray-100 dark:bg-white/10 text-[#676B7E] dark:text-gray-300"
@@ -170,7 +170,7 @@ export default function AdminAppointments() {
                             onClick={() => updateStatus(apt.id, "PENDING")}
                             disabled={updatingId === apt.id}
                             title="Reset to Pending"
-                            className="p-2 rounded-lg bg-[#DDA73A]/15 text-[#8C6207] dark:text-[#DDA73A] hover:bg-[#DDA73A]/25 transition-colors disabled:opacity-50 cursor-pointer"
+                            className="p-2 rounded-lg bg-[#214AAB]/15 text-[#8C6207] dark:text-[#214AAB] hover:bg-[#214AAB]/25 transition-colors disabled:opacity-50 cursor-pointer"
                           >
                             <Clock className="w-4 h-4" />
                           </button>

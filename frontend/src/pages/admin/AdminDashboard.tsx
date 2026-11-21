@@ -34,10 +34,10 @@ export default function AdminDashboard() {
             <div>
               <p className="text-sm font-medium text-[#676B7E] dark:text-gray-300">{stat.name}</p>
               <h3 className="text-3xl font-bold text-[#162F6A] dark:text-white mt-2">{stat.value}</h3>
-              <span className="text-xs text-[#214AAB] dark:text-[#DDA73A] font-semibold mt-1 inline-block">{stat.change}</span>
+              <span className="text-xs text-[#214AAB] dark:text-[#214AAB] font-semibold mt-1 inline-block">{stat.change}</span>
             </div>
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-              idx % 2 === 0 ? "bg-[#DDA73A]/15 border border-[#DDA73A]/30 text-[#DDA73A]" : "bg-[#214AAB]/15 border border-[#214AAB]/30 text-[#214AAB] dark:text-[#BAE6FD]"
+              idx % 2 === 0 ? "bg-[#214AAB]/15 border border-[#214AAB]/30 text-[#214AAB]" : "bg-[#214AAB]/15 border border-[#214AAB]/30 text-[#214AAB] dark:text-[#BAE6FD]"
             }`}>
               <stat.icon className="w-6 h-6" />
             </div>
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
         <div className="bg-white dark:bg-[#162F6A] p-6 rounded-xl border border-[#EBEAEA] dark:border-white/10 shadow-sm">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-[#162F6A] dark:text-white font-serif">Recent Appointments</h3>
-            <Link to="/admin/dashboard/appointments" className="text-sm text-[#214AAB] dark:text-[#DDA73A] hover:underline font-semibold">View All</Link>
+            <Link to="/admin/dashboard/appointments" className="text-sm text-[#214AAB] dark:text-[#214AAB] hover:underline font-semibold">View All</Link>
           </div>
           {appointments.length === 0 ? (
             <div className="text-center text-gray-500 dark:text-gray-400 py-8">No recent appointments found.</div>
@@ -62,7 +62,7 @@ export default function AdminDashboard() {
                     <p className="text-xs text-[#676B7E] dark:text-gray-300">{apt.caseType} • {new Date(apt.createdAt).toLocaleDateString()}</p>
                   </div>
                   <span className={`px-2.5 py-1 text-xs font-bold rounded-full ${
-                    apt.status === "PENDING" ? "bg-[#DDA73A]/20 text-[#8C6207] dark:text-[#DDA73A] border border-[#DDA73A]/40" :
+                    apt.status === "PENDING" ? "bg-[#214AAB]/20 text-[#8C6207] dark:text-[#214AAB] border border-[#214AAB]/40" :
                     apt.status === "APPROVED" ? "bg-[#214AAB]/15 text-[#214AAB] dark:text-[#BAE6FD] border border-[#214AAB]/30" :
                     "bg-gray-100 dark:bg-white/10 text-[#676B7E] dark:text-gray-300"
                   }`}>
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
         <div className="bg-white dark:bg-[#162F6A] p-6 rounded-xl border border-[#EBEAEA] dark:border-white/10 shadow-sm">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-[#162F6A] dark:text-white font-serif">Recent Enquiries</h3>
-            <Link to="/admin/dashboard/enquiries" className="text-sm text-[#214AAB] dark:text-[#DDA73A] hover:underline font-semibold">View All</Link>
+            <Link to="/admin/dashboard/enquiries" className="text-sm text-[#214AAB] dark:text-[#214AAB] hover:underline font-semibold">View All</Link>
           </div>
           {enquiries.length === 0 ? (
             <div className="text-center text-gray-500 dark:text-gray-400 py-8">No recent enquiries found.</div>

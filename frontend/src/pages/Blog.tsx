@@ -44,7 +44,7 @@ export default function Blog() {
         {/* Header & Search */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#DDA73A] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
+            <div className="inline-flex items-center gap-2 text-[#214AAB] dark:text-[#214AAB] font-bold uppercase tracking-widest text-xs mb-3 bg-[#D2DFFF] dark:bg-[#102047] px-3.5 py-1.5 rounded-md border border-[#214AAB]/20">
               Legal Bulletins & Advisories
             </div>
             <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#162F6A] dark:text-white mb-4">
@@ -60,7 +60,7 @@ export default function Blog() {
               placeholder="Search legal articles..." 
               className="w-full pl-12 pr-4 py-3 rounded-xl bg-white dark:bg-[#102047] border border-[#EBEAEA] dark:border-white/15 text-[#23232A] dark:text-white placeholder-gray-400 focus:border-[#214AAB] focus:ring-1 focus:ring-[#214AAB] outline-none text-sm shadow-sm"
             />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" />
           </div>
         </div>
 
@@ -71,10 +71,10 @@ export default function Blog() {
               <img src={posts[0].img} alt={posts[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-              <span className="inline-block px-3 py-1 bg-[#D2DFFF] dark:bg-[#102047] text-[#162F6A] dark:text-[#DDA73A] font-bold text-xs uppercase tracking-wider rounded-md mb-4 w-fit border border-[#214AAB]/20">
+              <span className="inline-block px-3 py-1 bg-[#D2DFFF] dark:bg-[#102047] text-[#162F6A] dark:text-[#214AAB] font-bold text-xs uppercase tracking-wider rounded-md mb-4 w-fit border border-[#214AAB]/20">
                 {posts[0].category}
               </span>
-              <h2 className="text-2xl lg:text-3xl font-serif font-bold text-[#162F6A] dark:text-white mb-3 group-hover:text-[#214AAB] dark:group-hover:text-[#DDA73A] transition-colors">
+              <h2 className="text-2xl lg:text-3xl font-serif font-bold text-[#162F6A] dark:text-white mb-3 group-hover:text-[#214AAB] dark:group-hover:text-[#214AAB] transition-colors">
                 {posts[0].title}
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base">
@@ -83,9 +83,9 @@ export default function Blog() {
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
                 <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                   <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-[#214AAB]" /> {posts[0].author}</span>
-                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#DDA73A]" /> {posts[0].date}</span>
+                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#214AAB]" /> {posts[0].date}</span>
                 </div>
-                <div className="text-[#214AAB] dark:text-[#DDA73A] font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform">
+                <div className="text-[#214AAB] dark:text-[#214AAB] font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform">
                   Read More <ArrowRight className="ml-1.5 w-4 h-4" />
                 </div>
               </div>
@@ -100,21 +100,21 @@ export default function Blog() {
               <div className="relative h-56 overflow-hidden">
                 <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 bg-[#162F6A]/90 text-[#DDA73A] font-bold text-[11px] uppercase tracking-wider rounded-md border border-[#DDA73A]/30 shadow-sm">
+                  <span className="px-2.5 py-1 bg-[#162F6A]/90 text-[#214AAB] font-bold text-[11px] uppercase tracking-wider rounded-md border border-[#214AAB]/30 shadow-sm">
                     {post.category}
                   </span>
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-serif font-bold text-[#162F6A] dark:text-white mb-3 group-hover:text-[#214AAB] dark:group-hover:text-[#DDA73A] transition-colors line-clamp-2">
+                <h3 className="text-xl font-serif font-bold text-[#162F6A] dark:text-white mb-3 group-hover:text-[#214AAB] dark:group-hover:text-[#214AAB] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="mt-auto flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-100 dark:border-white/10">
-                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#DDA73A]" /> {post.date}</span>
-                  <ArrowRight className="w-4 h-4 text-[#214AAB] dark:text-[#DDA73A] group-hover:translate-x-1 transition-transform" />
+                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#214AAB]" /> {post.date}</span>
+                  <ArrowRight className="w-4 h-4 text-[#214AAB] dark:text-[#214AAB] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </Link>

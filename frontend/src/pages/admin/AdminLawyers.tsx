@@ -37,7 +37,7 @@ export default function AdminLawyers() {
                           <img src={lawyer.img} alt={lawyer.name} className="w-full h-full object-cover" />
                         </div>
                       ) : (
-                        <div className="w-12 h-12 rounded-full bg-[#DDA73A]/20 border border-[#DDA73A]/40 flex items-center justify-center font-bold text-[#8C6207] dark:text-[#DDA73A]">
+                        <div className="w-12 h-12 rounded-full bg-[#214AAB]/20 border border-[#214AAB]/40 flex items-center justify-center font-bold text-[#8C6207] dark:text-[#214AAB]">
                           {lawyer.name.charAt(0)}
                         </div>
                       )}
@@ -48,7 +48,7 @@ export default function AdminLawyers() {
                     </td>
                     <td className="px-6 py-4 font-semibold text-[#23232A] dark:text-gray-200">{lawyer.role}</td>
                     <td className="px-6 py-4">
-                      <button className="text-[#214AAB] dark:text-[#DDA73A] hover:underline mr-4 font-bold text-sm cursor-pointer">Edit</button>
+                      <button className="text-[#214AAB] dark:text-[#214AAB] hover:underline mr-4 font-bold text-sm cursor-pointer">Edit</button>
                       <button className="text-red-500 hover:underline font-bold text-sm cursor-pointer">Remove</button>
                     </td>
                   </tr>

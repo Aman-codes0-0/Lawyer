@@ -9,7 +9,7 @@ const en = {
   nav_book: "Book Consultation",
 
   // Hero Section
-  hero_heading: "Experienced Legal Solutions",
+  hero_heading: 'Experienced Legal "Solutions"',
   hero_tagline: "Protecting Your Rights With Confidence",
   hero_subtext:
     "Professional legal representation for individuals, businesses, and families. We fight for the justice you deserve.",
@@ -53,7 +53,7 @@ const en = {
   // CTA
   cta_heading: "Need Legal Advice?",
   cta_sub: "Schedule Your Confidential Consultation Today",
-  cta_button: "Book Appointment",
+  cta_button: "Book Consultation",
 
   // Team Page
   team_heading: "Our Legal Experts",

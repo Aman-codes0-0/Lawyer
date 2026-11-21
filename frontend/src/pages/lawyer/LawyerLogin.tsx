@@ -59,12 +59,12 @@ export default function LawyerLoginPage() {
         className="w-full max-w-md relative z-10 my-auto py-8"
       >
         {/* Card */}
-        <div className="bg-white dark:bg-[#162F6A] border border-[#EBEAEA] dark:border-[#DDA73A]/30 rounded-2xl p-6 sm:p-8 shadow-xl">
+        <div className="bg-white dark:bg-[#162F6A] border border-[#EBEAEA] dark:border-[#214AAB]/30 rounded-2xl p-6 sm:p-8 shadow-xl">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors mb-6 group"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#214AAB] transition-colors mb-6 group"
           >
-            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#DDA73A]" /> Back to Home
+            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#214AAB]" /> Back to Home
           </Link>
 
           {/* Header */}
@@ -75,10 +75,10 @@ export default function LawyerLoginPage() {
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
               className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#D2DFFF] dark:bg-[#102047] border border-[#214AAB]/25 mb-3"
             >
-              <Scale className="w-7 h-7 text-[#214AAB] dark:text-[#DDA73A]" />
+              <Scale className="w-7 h-7 text-[#214AAB] dark:text-[#214AAB]" />
             </motion.div>
             <h1 className="font-serif text-3xl font-bold text-[#162F6A] dark:text-white">
-              Lawyer<span className="text-[#214AAB] dark:text-[#DDA73A]"> Portal</span>
+              Lawyer<span className="text-[#214AAB] dark:text-[#214AAB]"> Portal</span>
             </h1>
             <p className="text-gray-500 dark:text-gray-300 mt-1.5 text-xs">
               Sign in to access your professional legal dashboard
@@ -105,7 +105,7 @@ export default function LawyerLoginPage() {
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" />
                 <input
                   id="lawyer-login-email"
                   type="email"
@@ -124,7 +124,7 @@ export default function LawyerLoginPage() {
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" />
+                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" />
                 <input
                   id="lawyer-login-password"
                   type={showPassword ? "text" : "password"}
@@ -150,7 +150,7 @@ export default function LawyerLoginPage() {
               type="submit"
               id="lawyer-login-submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 font-bold text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed shadow-md mt-2 cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#214AAB]/40 font-bold text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed shadow-md mt-2 cursor-pointer"
             >
               {loading ? (
                 <span className="flex items-center gap-2">
@@ -175,7 +175,7 @@ export default function LawyerLoginPage() {
             Don&apos;t have an account?{" "}
             <Link
               to="/lawyer/signup"
-              className="text-[#214AAB] dark:text-[#DDA73A] hover:underline font-bold transition-colors"
+              className="text-[#214AAB] dark:text-[#214AAB] hover:underline font-bold transition-colors"
             >
               Create one here
             </Link>

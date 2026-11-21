@@ -101,14 +101,14 @@ export default function AdminEnquiries() {
         <div>
           <h1 className="text-3xl font-serif font-bold text-[#162F6A] dark:text-white">Contact Enquiries</h1>
           {unreadCount > 0 && (
-            <p className="text-sm text-[#8C6207] dark:text-[#DDA73A] font-semibold mt-1">{unreadCount} unread enquiry{unreadCount > 1 ? "ies" : ""}</p>
+            <p className="text-sm text-[#8C6207] dark:text-[#214AAB] font-semibold mt-1">{unreadCount} unread enquiry{unreadCount > 1 ? "ies" : ""}</p>
           )}
         </div>
         <button
           onClick={loadEnquiries}
           className="flex items-center gap-2 text-sm text-[#162F6A] dark:text-[#BAE6FD] hover:text-[#214AAB] border border-[#EBEAEA] dark:border-white/20 bg-white dark:bg-[#162F6A] px-3.5 py-2 rounded-xl transition-colors cursor-pointer shadow-sm"
         >
-          <RefreshCw className="w-4 h-4 text-[#214AAB] dark:text-[#DDA73A]" /> Refresh
+          <RefreshCw className="w-4 h-4 text-[#214AAB] dark:text-[#214AAB]" /> Refresh
         </button>
       </div>
 
@@ -137,7 +137,7 @@ export default function AdminEnquiries() {
                   <tr
                     key={enq.id}
                     className={`hover:bg-slate-50 dark:hover:bg-white/5 cursor-pointer transition-colors ${
-                      enq.status === "UNREAD" ? "bg-[#DDA73A]/10 dark:bg-[#DDA73A]/15" : ""
+                      enq.status === "UNREAD" ? "bg-[#214AAB]/10 dark:bg-[#214AAB]/15" : ""
                     }`}
                     onClick={() => setExpandedId(expandedId === enq.id ? null : enq.id)}
                   >
@@ -154,7 +154,7 @@ export default function AdminEnquiries() {
                     </td>
                     <td className="px-6 py-4">
                       <span className={`px-2.5 py-1 text-xs font-bold rounded-full ${
-                        enq.status === "UNREAD" ? "bg-[#DDA73A]/20 text-[#8C6207] dark:text-[#DDA73A] border border-[#DDA73A]/40" :
+                        enq.status === "UNREAD" ? "bg-[#214AAB]/20 text-[#8C6207] dark:text-[#214AAB] border border-[#214AAB]/40" :
                         "bg-[#214AAB]/15 text-[#214AAB] dark:text-[#BAE6FD] border border-[#214AAB]/30"
                       }`}>
                         {enq.status}

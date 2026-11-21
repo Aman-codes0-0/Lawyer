@@ -61,7 +61,7 @@ export function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className={`fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DDA73A] transition-transform duration-100 ${
+        className={`fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#214AAB] transition-transform duration-100 ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${isHovering ? "w-2.5 h-2.5 scale-125" : "w-2 h-2"}`}
         style={{ top: 0, left: 0 }}
