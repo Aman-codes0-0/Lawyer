@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/context/LanguageContext";
 import { useLawyerAuth } from "@/context/LawyerAuthContext";
+import { useSiteSettings } from "@/context/SiteSettingsContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,8 +15,32 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { lawyer, isLoggedIn, logout } = useLawyerAuth();
+  const { settings, setIsQuickDrawerOpen } = useSiteSettings();
   const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Easter Egg 4-Click State
+  const [clickCount, setClickCount] = useState(0);
+  const [isEasterGlow, setIsEasterGlow] = useState(false);
+  const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    const nextCount = clickCount + 1;
+    setClickCount(nextCount);
+
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    clickTimerRef.current = setTimeout(() => {
+      setClickCount(0);
+    }, 2500);
+
+    if (nextCount >= 4) {
+      e.preventDefault();
+      setClickCount(0);
+      setIsEasterGlow(true);
+      setTimeout(() => setIsEasterGlow(false), 2500);
+      setIsQuickDrawerOpen(true);
+    }
+  };
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -58,12 +83,32 @@ export default function Navbar() {
           : "bg-[#162F6A] border-b border-[#102047] py-4"
       }`}
     >
+      {/* Optional Announcement Bar */}
+      {settings.showAnnouncementBar && (
+        <div className="bg-[#DDA73A] text-[#162F6A] text-xs font-bold py-1.5 px-4 text-center border-b border-[#162F6A]/20 flex items-center justify-center gap-2 -mt-4 mb-3">
+          <span className="bg-[#162F6A] text-white text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Announcement</span>
+          <span>{settings.announcementText}</span>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group pr-4 shrink-0 min-h-[48px]">
-            <div className="w-10 h-10 rounded-lg bg-[#DDA73A]/15 border border-[#DDA73A]/40 flex items-center justify-center group-hover:bg-[#DDA73A]/25 transition-colors">
-              <Scale className="h-6 w-6 text-[#DDA73A]" />
+          {/* Logo with 4-Click Easter Egg */}
+          <div
+            onClick={handleLogoClick}
+            className={`flex items-center gap-2 group pr-4 shrink-0 min-h-[48px] cursor-pointer select-none transition-all ${
+              isEasterGlow ? "scale-105" : ""
+            }`}
+            title={clickCount > 0 ? `${4 - clickCount} clicks to secret menu` : undefined}
+          >
+            <div
+              className={`w-10 h-10 rounded-lg bg-[#DDA73A]/15 border border-[#DDA73A]/40 flex items-center justify-center transition-all ${
+                isEasterGlow
+                  ? "ring-4 ring-[#DDA73A] bg-[#DDA73A]/40 shadow-[0_0_20px_#DDA73A]"
+                  : "group-hover:bg-[#DDA73A]/25"
+              }`}
+            >
+              <Scale className={`h-6 w-6 text-[#DDA73A] ${isEasterGlow ? "animate-bounce" : ""}`} />
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-2xl sm:text-2xl font-bold text-white tracking-wide leading-tight">
@@ -73,7 +118,7 @@ export default function Navbar() {
                 Legal Portal
               </span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6 lg:gap-7">
@@ -89,7 +134,7 @@ export default function Navbar() {
             ))}
 
             {/* Language Toggle */}
-            {mounted && (
+            {mounted && settings.showLangToggle && (
               <button
                 onClick={() => setLang(lang === "en" ? "hi" : "en")}
                 className="flex items-center gap-1 px-2.5 py-1 rounded-md border border-white/20 text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all text-xs font-bold cursor-pointer"
@@ -103,7 +148,7 @@ export default function Navbar() {
             )}
 
             {/* Dark Mode Toggle */}
-            {mounted && (
+            {mounted && settings.showThemeToggle && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="w-8 h-8 rounded-md border border-white/20 flex items-center justify-center text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all cursor-pointer"
@@ -135,15 +180,18 @@ export default function Navbar() {
               </button>
             )}
 
-            <Link
-              to="/book-consultation"
-              className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-5 py-2.5 rounded-md font-bold text-sm tracking-wide transition-all shadow-md hover:shadow-[#214AAB]/30"
-            >
-              {t("nav_consult")}
-            </Link>
+            {settings.showConsultationBtn && (
+              <Link
+                to="/book-consultation"
+                className="bg-[#214AAB] hover:bg-[#1A3E94] text-white border border-[#DDA73A]/40 px-5 py-2.5 rounded-md font-bold text-sm tracking-wide transition-all shadow-md hover:shadow-[#214AAB]/30"
+              >
+                {t("nav_consult")}
+              </Link>
+            )}
 
             {/* Lawyer Portal */}
-            <div className="relative" ref={dropdownRef}>
+            {settings.showLawyerLoginBtn && (
+              <div className="relative" ref={dropdownRef}>
               {!isLoggedIn ? (
                 <Link
                   to="/lawyer/login"
@@ -199,11 +247,12 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2 sm:gap-3">
-            {mounted && (
+            {mounted && settings.showLangToggle && (
               <button
                 onClick={() => setLang(lang === "en" ? "hi" : "en")}
                 className="flex items-center justify-center gap-1 min-h-[44px] min-w-[44px] rounded-md border border-white/20 text-white text-xs font-bold"
@@ -215,7 +264,7 @@ export default function Navbar() {
                 <span className={lang === "hi" ? "text-[#DDA73A]" : "text-white/60"}>हि</span>
               </button>
             )}
-            {mounted && (
+            {mounted && settings.showThemeToggle && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="min-h-[44px] min-w-[44px] rounded-md border border-white/20 flex items-center justify-center text-white hover:border-[#DDA73A] hover:text-[#DDA73A] transition-all"
@@ -260,47 +309,51 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 space-y-3">
-                <Link
-                  to="/book-consultation"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-center bg-[#214AAB] text-white border border-[#DDA73A]/40 px-6 py-3.5 rounded-lg font-bold text-base shadow-lg"
-                >
-                  {t("nav_book")}
-                </Link>
-                {!isLoggedIn ? (
+                {settings.showConsultationBtn && (
                   <Link
-                    to="/lawyer/login"
-                    id="nav-mobile-lawyer-login"
+                    to="/book-consultation"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full text-center border border-gold/40 text-gold px-6 py-3 rounded font-bold text-base"
+                    className="block w-full text-center bg-[#214AAB] text-white border border-[#DDA73A]/40 px-6 py-3.5 rounded-lg font-bold text-base shadow-lg"
                   >
-                    <UserCircle2 className="w-4 h-4" />
-                    Lawyer Login
+                    {t("nav_book")}
                   </Link>
-                ) : (
-                  <div className="glass border border-white/10 rounded-lg p-4">
-                    <p className="text-white font-semibold text-sm">{lawyer?.name}</p>
-                    <p className="text-gray-400 text-xs mb-3">{lawyer?.designation}</p>
-                    <div className="flex gap-2">
-                      <Link
-                        to="/lawyer/dashboard"
-                        id="nav-mobile-lawyer-dashboard"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-gold/10 border border-gold/30 text-gold rounded text-sm font-semibold"
-                      >
-                        <LayoutDashboard className="w-3.5 h-3.5" />
-                        Dashboard
-                      </Link>
-                      <button
-                        id="nav-mobile-lawyer-logout"
-                        onClick={() => { handleLawyerLogout(); setMobileMenuOpen(false); }}
-                        className="flex-1 flex items-center justify-center gap-1.5 py-2 border border-white/10 text-gray-400 rounded text-sm font-semibold hover:text-red-400"
-                      >
-                        <LogOut className="w-3.5 h-3.5" />
-                        Sign Out
-                      </button>
+                )}
+                {settings.showLawyerLoginBtn && (
+                  !isLoggedIn ? (
+                    <Link
+                      to="/lawyer/login"
+                      id="nav-mobile-lawyer-login"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2 w-full text-center border border-[#DDA73A]/40 text-[#DDA73A] px-6 py-3 rounded-lg font-bold text-base"
+                    >
+                      <UserCircle2 className="w-4 h-4" />
+                      Lawyer Login
+                    </Link>
+                  ) : (
+                    <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                      <p className="text-white font-semibold text-sm">{lawyer?.name}</p>
+                      <p className="text-gray-300 text-xs mb-3">{lawyer?.designation}</p>
+                      <div className="flex gap-2">
+                        <Link
+                          to="/lawyer/dashboard"
+                          id="nav-mobile-lawyer-dashboard"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-[#DDA73A]/10 border border-[#DDA73A]/30 text-[#DDA73A] rounded text-sm font-semibold"
+                        >
+                          <LayoutDashboard className="w-3.5 h-3.5" />
+                          Dashboard
+                        </Link>
+                        <button
+                          id="nav-mobile-lawyer-logout"
+                          onClick={() => { handleLawyerLogout(); setMobileMenuOpen(false); }}
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 border border-white/10 text-gray-300 rounded text-sm font-semibold hover:text-red-400"
+                        >
+                          <LogOut className="w-3.5 h-3.5" />
+                          Sign Out
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  )
                 )}
               </div>
             </div>

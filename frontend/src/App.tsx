@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SplashScreen } from "@/components/SplashScreen";
+import QuickAdminDrawer from "@/components/QuickAdminDrawer";
+import { useSiteSettings } from "@/context/SiteSettingsContext";
 
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -18,6 +20,7 @@ import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminAppointments from "@/pages/admin/AdminAppointments";
 import AdminEnquiries from "@/pages/admin/AdminEnquiries";
 import AdminLawyers from "@/pages/admin/AdminLawyers";
+import AdminSiteSettings from "@/pages/admin/AdminSiteSettings";
 
 import LawyerLogin from "@/pages/lawyer/LawyerLogin";
 import LawyerSignup from "@/pages/lawyer/LawyerSignup";
@@ -25,6 +28,7 @@ import LawyerDashboard from "@/pages/lawyer/LawyerDashboard";
 
 export default function App() {
   const location = useLocation();
+  const { settings } = useSiteSettings();
 
   // Hide Navbar/Footer for Admin dashboard and Lawyer portal standalone views
   const isDashboard =
@@ -33,8 +37,9 @@ export default function App() {
 
   return (
     <>
-      <SplashScreen />
-      <CustomCursor />
+      {settings.showSplashScreen && <SplashScreen />}
+      {settings.showCustomCursor && <CustomCursor />}
+      <QuickAdminDrawer />
 
       {!isDashboard && <Navbar />}
 
@@ -54,6 +59,7 @@ export default function App() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="dashboard/site-settings" element={<AdminSiteSettings />} />
             <Route path="dashboard/appointments" element={<AdminAppointments />} />
             <Route path="dashboard/enquiries" element={<AdminEnquiries />} />
             <Route path="dashboard/lawyers" element={<AdminLawyers />} />

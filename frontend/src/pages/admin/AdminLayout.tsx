@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation, Link, Outlet } from "react-router-dom";
-import { Scale, Users, Calendar, MessageSquare, LogOut, LayoutDashboard } from "lucide-react";
+import { Scale, Users, Calendar, MessageSquare, LogOut, LayoutDashboard, Sliders } from "lucide-react";
 
 export default function AdminLayout() {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ export default function AdminLayout() {
 
   const navItems = [
     { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
+    { name: "Site Controls", href: "/admin/dashboard/site-settings", icon: Sliders },
     { name: "Appointments", href: "/admin/dashboard/appointments", icon: Calendar },
     { name: "Enquiries", href: "/admin/dashboard/enquiries", icon: MessageSquare },
     { name: "Lawyers", href: "/admin/dashboard/lawyers", icon: Users },

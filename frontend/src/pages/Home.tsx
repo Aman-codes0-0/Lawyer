@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { useSiteSettings } from "@/context/SiteSettingsContext";
 import { lawyers } from "@/lib/lawyers-data";
 
 const SERVICE_PILLS = [
@@ -27,12 +28,14 @@ const PRACTICE_AREAS = [
 
 export default function Home() {
   const { t, tArr } = useLanguage();
+  const { settings } = useSiteSettings();
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F1F1F4]">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-20 pb-16 bg-gradient-to-br from-[#162F6A] via-[#102047] to-[#162F6A]">
+      {settings.showHero && (
+        <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-20 pb-16 bg-gradient-to-br from-[#162F6A] via-[#102047] to-[#162F6A]">
         {/* Background image overlay */}
         <motion.div
           initial={{ scale: 1.08 }}
@@ -127,9 +130,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* ── PRACTICE AREAS ── */}
-      <section className="py-16 sm:py-20 px-4 sm:px-8 bg-[#F1F1F4]">
+      {settings.showPracticeAreas && (
+        <section className="py-16 sm:py-20 px-4 sm:px-8 bg-[#F1F1F4]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#214AAB] font-bold tracking-widest uppercase text-xs mb-2 block">What We Do</span>
@@ -155,9 +160,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── OUR APPROACH + SERVICE PILLS ── */}
-      <section className="py-16 sm:py-20 px-4 sm:px-8 bg-white border-t border-[#EBEAEA]">
+      {settings.showApproach && (
+        <section className="py-16 sm:py-20 px-4 sm:px-8 bg-white border-t border-[#EBEAEA]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -218,9 +225,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* ── TEAM TILES ── */}
-      <section className="py-16 sm:py-20 px-4 sm:px-8 bg-[#F1F1F4] border-t border-[#EBEAEA]">
+      {settings.showTeam && (
+        <section className="py-16 sm:py-20 px-4 sm:px-8 bg-[#F1F1F4] border-t border-[#EBEAEA]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#214AAB] font-bold tracking-widest uppercase text-xs mb-2 block">Our Team</span>
@@ -290,9 +299,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── CONTACT STRIP ── */}
-      <section className="py-10 px-4 sm:px-8 bg-[#F1F1F4] border-t border-[#EBEAEA]">
+      {settings.showContactStrip && (
+        <section className="py-10 px-4 sm:px-8 bg-[#F1F1F4] border-t border-[#EBEAEA]">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             { icon: MapPin, label: "Address",  value: "12, Court Lane, New Delhi – 110001" },
@@ -311,9 +322,11 @@ export default function Home() {
           ))}
         </div>
       </section>
+      )}
 
       {/* ── CTA ── */}
-      <section className="bg-[#162F6A] py-20 relative overflow-hidden border-t border-[#DDA73A]/30 px-4 sm:px-8">
+      {settings.showCtaBanner && (
+        <section className="bg-[#162F6A] py-20 relative overflow-hidden border-t border-[#DDA73A]/30 px-4 sm:px-8">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#162F6A] via-[#102047]/90 to-[#162F6A]" />
         <div className="relative z-10 max-w-2xl mx-auto text-center space-y-5">
@@ -329,6 +342,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
     </div>
   );
