@@ -1,5 +1,3 @@
-"use client";
-
 import {
   createContext,
   useContext,
@@ -25,6 +23,7 @@ interface LawyerAuthContextValue {
   lawyer: LawyerSession | null;
   isLoggedIn: boolean;
   isLoading: boolean;
+  login: (data: LawyerSession) => void;
   refresh: () => Promise<void>;
   logout: () => Promise<void>;
 }
@@ -33,6 +32,7 @@ const LawyerAuthContext = createContext<LawyerAuthContextValue>({
   lawyer: null,
   isLoggedIn: false,
   isLoading: true,
+  login: () => {},
   refresh: async () => {},
   logout: async () => {},
 });
@@ -48,17 +48,29 @@ export function LawyerAuthProvider({ children }: { children: ReactNode }) {
         const data = await res.json();
         setLawyer(data.lawyer);
       } else {
-        setLawyer(null);
+        const saved = localStorage.getItem("lexprime_lawyer_session");
+        if (saved) setLawyer(JSON.parse(saved));
+        else setLawyer(null);
       }
     } catch {
-      setLawyer(null);
+      const saved = localStorage.getItem("lexprime_lawyer_session");
+      if (saved) setLawyer(JSON.parse(saved));
+      else setLawyer(null);
     } finally {
       setIsLoading(false);
     }
   }, []);
 
+  const login = (data: LawyerSession) => {
+    setLawyer(data);
+    localStorage.setItem("lexprime_lawyer_session", JSON.stringify(data));
+  };
+
   const logout = useCallback(async () => {
-    await fetch("/api/lawyer/logout", { method: "POST" });
+    try {
+      await fetch("/api/lawyer/logout", { method: "POST" });
+    } catch {}
+    localStorage.removeItem("lexprime_lawyer_session");
     setLawyer(null);
   }, []);
 
@@ -68,7 +80,7 @@ export function LawyerAuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <LawyerAuthContext.Provider
-      value={{ lawyer, isLoggedIn: !!lawyer, isLoading, refresh, logout }}
+      value={{ lawyer, isLoggedIn: !!lawyer, isLoading, login, refresh, logout }}
     >
       {children}
     </LawyerAuthContext.Provider>

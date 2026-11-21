@@ -1,5 +1,3 @@
-"use client";
-
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import en, { TranslationKey } from "@/lib/translations/en";
 import hi from "@/lib/translations/hi";

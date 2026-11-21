@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
@@ -9,7 +7,6 @@ export function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only show custom cursor on non-touch devices
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const dot = dotRef.current;
@@ -40,7 +37,6 @@ export function CustomCursor() {
     };
 
     const raf = () => {
-      // Smooth lag for ring
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
       ring.style.left = `${ringX}px`;
@@ -52,7 +48,6 @@ export function CustomCursor() {
     addLinkListeners();
     requestAnimationFrame(raf);
 
-    // Re-add listeners on route changes
     const observer = new MutationObserver(addLinkListeners);
     observer.observe(document.body, { childList: true, subtree: true });
 
@@ -64,20 +59,18 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Dot - snaps to cursor */}
       <div
         ref={dotRef}
-        className={`fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold transition-transform duration-100 ${
+        className={`fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DDA73A] transition-transform duration-100 ${
           isVisible ? "opacity-100" : "opacity-0"
-        } ${isHovering ? "w-2 h-2 scale-150" : "w-2 h-2"}`}
+        } ${isHovering ? "w-2.5 h-2.5 scale-125" : "w-2 h-2"}`}
         style={{ top: 0, left: 0 }}
       />
-      {/* Ring - lags behind with spring */}
       <div
         ref={ringRef}
-        className={`fixed pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/60 transition-all duration-300 ${
+        className={`fixed pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#214AAB]/60 transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0"
-        } ${isHovering ? "w-10 h-10 border-gold" : "w-7 h-7"}`}
+        } ${isHovering ? "w-9 h-9 border-[#214AAB] bg-[#214AAB]/10" : "w-6 h-6"}`}
         style={{ top: 0, left: 0 }}
       />
     </>

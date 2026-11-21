@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { Scale } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,7 +6,6 @@ export function SplashScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Hide splash screen shortly after hydration
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1200);
@@ -24,26 +21,27 @@ export function SplashScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#050505]"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#162F6A]"
         >
           <div className="relative flex items-center justify-center">
-            {/* Outer rotating ring */}
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="w-28 h-28 border-t-[3px] border-r-[3px] border-[#D4AF37]/40 rounded-full absolute"
+              className="w-28 h-28 border-t-[3px] border-r-[3px] border-[#DDA73A] border-b-[3px] border-b-[#214AAB] rounded-full absolute"
             />
             
-            {/* Center Logo Icon */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative flex items-center justify-center w-20 h-20 bg-[#111] rounded-full shadow-[0_0_20px_rgba(212,175,55,0.3)] border border-[#D4AF37]/30"
+              className="relative flex items-center justify-center w-20 h-20 bg-[#102047] rounded-full shadow-[0_0_25px_rgba(221,167,58,0.25)] border border-[#DDA73A]/40"
             >
-              <Scale className="w-10 h-10 text-[#D4AF37]" strokeWidth={1.5} />
+              <Scale className="w-10 h-10 text-[#DDA73A]" strokeWidth={1.5} />
             </motion.div>
           </div>
+          <p className="text-white text-xs font-semibold tracking-widest uppercase mt-8 text-gray-300">
+            LexPrime Legal Portal
+          </p>
         </motion.div>
       )}
     </AnimatePresence>
