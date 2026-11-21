@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Scale, Lock, User, AlertCircle } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
+import { Scale, Lock, User, AlertCircle, ArrowLeft } from "lucide-react";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -29,7 +29,14 @@ export default function AdminLogin() {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#214AAB]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#DDA73A]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-md w-full space-y-8 bg-white dark:bg-[#162F6A] p-8 sm:p-10 rounded-2xl shadow-xl border border-[#EBEAEA] dark:border-white/10 relative z-10">
+      <div className="max-w-md w-full space-y-6 bg-white dark:bg-[#162F6A] p-8 sm:p-10 rounded-2xl shadow-xl border border-[#EBEAEA] dark:border-white/10 relative z-10">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#DDA73A]" /> Back to Home
+        </Link>
+
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#162F6A] text-[#DDA73A] shadow-md mb-4">
             <Scale className="h-8 w-8" />
@@ -85,6 +92,15 @@ export default function AdminLogin() {
             >
               {loading ? "Signing in..." : "Sign In to Admin"}
             </button>
+          </div>
+
+          <div className="text-center pt-2 border-t border-[#EBEAEA] dark:border-white/10">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Return to Website Home
+            </Link>
           </div>
         </form>
       </div>

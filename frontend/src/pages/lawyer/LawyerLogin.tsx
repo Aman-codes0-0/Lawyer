@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Scale, Mail, Lock, AlertCircle, Eye, EyeOff, ArrowRight } from "lucide-react";
+import { Scale, Mail, Lock, AlertCircle, Eye, EyeOff, ArrowRight, ArrowLeft } from "lucide-react";
 import { useLawyerAuth } from "@/context/LawyerAuthContext";
 
 export default function LawyerLoginPage() {
@@ -60,6 +60,13 @@ export default function LawyerLoginPage() {
       >
         {/* Card */}
         <div className="bg-white dark:bg-[#162F6A] border border-[#EBEAEA] dark:border-[#DDA73A]/30 rounded-2xl p-6 sm:p-8 shadow-xl">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#676B7E] dark:text-blue-200 hover:text-[#214AAB] dark:hover:text-[#DDA73A] transition-colors mb-6 group"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#DDA73A]" /> Back to Home
+          </Link>
+
           {/* Header */}
           <div className="text-center mb-8">
             <motion.div
